@@ -1,3 +1,4 @@
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -64,3 +65,8 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+# wtw-back
+Bienvenidos a la parte backend de mi trabajo final de carrera.
+Mi proyecto tiene como objetivo principal ofrecer información detallada y personalizada sobre las visas Working Holiday que se encuentran disponibles. A través de esta plataforma, los usuarios podrán explorar los destinos disponibles para postularse a este tipo de visa, en función de su nacionalidad (limitado inicialmente a Argentina, España, Uruguay y Chile) y su rango de edad.
+
