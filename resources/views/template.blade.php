@@ -11,6 +11,7 @@
     <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <title>@yield('tituloNavegador')</title>
 </head>
@@ -30,13 +31,11 @@
         <div class="container-md d-flex justify-content-end">
 
         </div>
-        <!-- VER DE MOVER ESTO AL NAV-BAR -->
         <hr>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-3 ms-2 border-end border-2" style="color:#278a81">
                     @include('partials.side-bar')
-                    {{-- @yield('contenido') --}}
                 </div>
                 <div class="col-8">
                     @yield('contenido')

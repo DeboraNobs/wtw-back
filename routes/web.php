@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\NacionalidadController;
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -8,3 +9,6 @@ Route::get('/', function () {
 })->name('home');
 
 Route::resource('nacionalidades', NacionalidadController::class);
+
+Route::resource('usuarios', UsuarioController::class);
+

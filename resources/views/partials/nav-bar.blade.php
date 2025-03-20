@@ -9,9 +9,9 @@
 
           <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Inicio</a>
 
-          <a class="nav-link" href="">Usuarios</a>
+          <a class="nav-link" href="{{ route('usuarios.index') }}">Usuarios</a>
 
-          <a class="nav-link" href="">Asesorias</a>
+          <a class="nav-link" href=""> Asesorias</a>
 
           <a class="nav-link" href="{{ route('nacionalidades.index') }}">Nacionalidades</a>
 

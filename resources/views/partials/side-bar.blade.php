@@ -7,7 +7,7 @@
     <hr>
 </div>
 <div>
-    <a class="text-decoration-none" style="color: #6a11cb" href=""><i class="bi bi-person"></i>
+    <a class="text-decoration-none" style="color: #6a11cb" href="{{ route('usuarios.index') }}"><i class="bi bi-person"></i>
         Usuarios</a>
     <hr>
 </div>

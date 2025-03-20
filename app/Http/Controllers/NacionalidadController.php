@@ -33,7 +33,7 @@ class NacionalidadController extends Controller
         $nacionalidad->nacionalidad = $request->nacionalidad;
         $nacionalidad->save();
 
-        $msg = "Nacionalidad creado con éxito!";
+        $msg = "Nacionalidad $nacionalidad->nacionalidad creado con éxito!";
         return redirect()->route('nacionalidades.index')->with('msg', $msg);
     }
 
@@ -74,7 +74,7 @@ class NacionalidadController extends Controller
     {
         $nacionalidad = Nacionalidad::findOrFail($id);
         $nacionalidad->delete();
-        $msg = "Nacionalidad con ID: $id eliminada con éxito!";
+        $msg = "Nacionalidad $nacionalidad->nacionalidad con ID: $id eliminada con éxito!";
         return redirect()->route('nacionalidades.index')->with('msg', $msg);
     }
 }

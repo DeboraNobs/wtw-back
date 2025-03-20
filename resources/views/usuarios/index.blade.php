@@ -1,13 +1,13 @@
 @extends('template')
 
-@section('tituloNavegador', 'Nacionalidades')
+@section('tituloNavegador', 'Usuarios')
 
 @section('contenido')
     <div class="container py-5">
 
         <div class="card shadow-sm border-0 rounded-4 overflow-hidden mb-4">
             <div class="card-header bg-gradient-primary text-white py-3">
-                <h2 class="mb-0 text-center fw-light">Gestión de Nacionalidades</h2>
+                <h2 class="mb-0 text-center fw-light">Gestión de Usuarios</h2>
             </div>
         </div>
 
@@ -20,11 +20,11 @@
 
         <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
             <div class="card-header bg-light py-3">
-                <h4 class="mb-0 text-center fw-light">Listado de Nacionalidades</h4>
+                <h4 class="mb-0 text-center fw-light">Listado de Usuarios</h4>
             </div>
 
-            <a href="{{ route('nacionalidades.create') }}" class="btn btn-outline-primary btn-lgrounded-pill">
-                <i class="bi bi-plus-circle me-2"></i> Crear Nacionalidad
+            <a href="{{ route('usuarios.create') }}" class="btn btn-outline-primary btn-lgrounded-pill">
+                <i class="bi bi-plus-circle me-2"></i> Crear Usuario
             </a>
 
             <div class="card-body p-0">
@@ -33,29 +33,39 @@
                         <thead class="table-light">
                             <tr>
                                 <th class="text-start ps-4">ID</th>
-                                <th class="text-start">Nacionalidad</th>
+                                <th class="text-start">Nombre</th>
+                                <th class="text-start">Apellidos</th>
+                                <th class="text-start">Email</th>
+                                <th class="text-start">Rol</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($nacionalidades as $nacionalidad)
+                            @foreach ($usuarios as $usuario)
                                 <tr>
-                                    <td class="text-start ps-4">{{ $nacionalidad->id }}</td>
-                                    <td class="text-start">{{ $nacionalidad->nacionalidad }}</td>
+                                    <td class="text-start ps-4">{{ $usuario->id }}</td>
+                                    <td class="text-start">{{ $usuario->nombre }}</td>
+                                    <td class="text-start">{{ $usuario->apellidos }}</td>
+                                    <td class="text-start">{{ $usuario->email }}</td>
+                                    <td class="text-start">{{ $usuario->rol }}</td>
+
                                     <td>
                                         <div class="d-flex justify-content-center">
 
-                                            <a href="{{ route('nacionalidades.edit', $nacionalidad->id) }}"
+                                            <a href="{{ route('usuarios.show', $usuario->id) }}"
+                                                class="btn btn-sm btn-outline-info me-2 rounded-pill">
+                                                <i class="bi bi-eye"></i> Ver
+                                            </a>
+
+                                            <a href="{{ route('usuarios.edit', $usuario->id) }}"
                                                 class="btn btn-sm btn-outline-primary me-2 rounded-pill">
                                                 <i class="bi bi-pencil-square"></i> Editar
                                             </a>
 
-                                            <form method="POST"
-                                                action="{{ route('nacionalidades.destroy', $nacionalidad->id) }}">
+                                            <form method="POST" action="{{ route('usuarios.destroy', $usuario->id) }}">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="button"
-                                                    class="btn btn-sm btn-outline-danger rounded-pill delete-btn">
+                                                <button type="button" class="btn btn-sm btn-outline-danger rounded-pill delete-btn">
                                                     <i class="bi bi-trash"></i> Eliminar
                                                 </button>
                                             </form>
