@@ -22,7 +22,7 @@ return new class extends Migration
             $table->boolean('aplica_exterior');
             $table->boolean('requiere_estudios');
             $table->boolean('requiere_idiomas');
-            $table->boolean('esta_disponible');
+            $table->boolean('requiere_idiomas'); // ver porque esta repetido
 
             $table->timestamps();
         });

@@ -12,3 +12,5 @@ Route::resource('nacionalidades', NacionalidadController::class);
 
 Route::resource('usuarios', UsuarioController::class);
 
+Route::resource('destinos', DestinoController::class);
+
