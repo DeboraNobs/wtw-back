@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\AsesoriaController;
 use App\Http\Controllers\NacionalidadController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\DestinoController;
+use App\Http\Controllers\ExperienciaController;
+use App\Http\Controllers\SeccionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,3 +18,6 @@ Route::resource('usuarios', UsuarioController::class);
 
 Route::resource('destinos', DestinoController::class);
 
+Route::resource('experiencias', ExperienciaController::class);
+
+Route::resource('asesorias', AsesoriaController::class);

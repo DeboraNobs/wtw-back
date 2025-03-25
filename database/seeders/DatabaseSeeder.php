@@ -23,8 +23,6 @@ class DatabaseSeeder extends Seeder
             CategoriasSeeder::class,
             ArticulosSeeder::class,
             ArticulosCategoriasSeeder::class,
-            SeccionesSeeder::class,
-            SeccionesDestinosSeeder::class,
             AsesoriasSeeder::class,
             RequisitosSeeder::class,
             DestinoNacionalidadRequisitosSeeder::class

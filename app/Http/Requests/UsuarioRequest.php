@@ -22,11 +22,11 @@ class UsuarioRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nombre' => 'required',
-            'apellidos' => 'required',
+            'nombre' => ['required', 'regex:/^[a-zA-Z\s]+$/'],
+            'apellidos' => ['required', 'regex:/^[a-zA-Z\s]+$/'],
             'email' => 'required|email',
             'rol' => 'required',
-            'password' => 'required|min:9|regex:/[A-Z]/|regex:/\d/',
+            'password' => 'required|regex:/^(?=.*[A-Z])(?=.*\d).{9,}$/',
             'fecha_nacimiento' => 'required',
             'nacionalidad_id' => 'required|numeric',
         ];
@@ -36,14 +36,21 @@ class UsuarioRequest extends FormRequest
     {
         return [
             'nombre.required' => 'El nombre es obligatorio.',
+            'nombre.regex' => 'El nombre del usuario solo puede contener letras y espacios.',
+
             'apellidos.required' => 'El apellido es obligatorio.',
+            'apellidos.regex' => 'Los apellidos del usuario solo puede contener letras y espacios.',
+
             'email.required' => 'El correo electrónico es obligatorio.',
             'email.email' => 'Este correo electrónico no tiene formato válido.',
+
             'rol.required' => 'El rol es obligatorio.',
+
             'password.required' => 'La contraseña es obligatoria.',
-            'password.min' => 'La contraseña debe tener al menos 9 caracteres.',
-            'password.regex' => 'La contraseña debe contener al menos una letra mayúscula y un número.',
+            'password.regex' => 'La contraseña debe contener al menos una letra mayúscula, un número y debe tener al menos 9 caracteres.',
+
             'fecha_nacimiento.required' => 'La fecha de nacimiento es obligatoria.',
+
             'nacionalidad_id.required' => 'La nacionalidad es obligatoria.',
             'nacionalidad_id.numeric' => 'La nacionalidad debe ser un número válido.',
         ];

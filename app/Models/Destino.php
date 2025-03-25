@@ -17,10 +17,6 @@ class Destino extends Model
         return $this->hasMany(Experiencia::class);
     }
 
-    public function secciones(){
-        return $this->belongsToMany(Seccion::class);
-    }
-
     public function requisitos() {
         return $this->belongsToMany(Requisito::class);
     }

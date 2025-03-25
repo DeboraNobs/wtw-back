@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('titulo');
             $table->string('subtitulo');
             $table->text('contenido');
+            $table->text('autor');
 
             $table->foreignId('destino_id')->constrained('destinos')->onDelete('cascade');
 

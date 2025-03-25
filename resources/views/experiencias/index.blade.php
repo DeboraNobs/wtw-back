@@ -1,13 +1,13 @@
 @extends('template')
 
-@section('tituloNavegador', 'Destinos')
+@section('tituloNavegador', 'Experiencias')
 
 @section('contenido')
     <div class="container py-5">
 
         <div class="card shadow-sm border-0 rounded-4 overflow-hidden mb-4">
             <div class="card-header bg-gradient-primary text-white py-3">
-                <h2 class="mb-0 text-center fw-light">Gestión de Destinos</h2>
+                <h2 class="mb-0 text-center fw-light">Gestión de Experiencias</h2>
             </div>
         </div>
 
@@ -20,11 +20,11 @@
 
         <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
             <div class="card-header bg-light py-3">
-                <h4 class="mb-0 text-center fw-light">Listado de Destinos</h4>
+                <h4 class="mb-0 text-center fw-light">Listado de Experiencias</h4>
             </div>
 
-            <a href="{{ route('destinos.create') }}" class="btn btn-outline-primary btn-lgrounded-pill">
-                <i class="bi bi-plus-circle me-2"></i> Crear Destino
+            <a href="{{ route('experiencias.create') }}" class="btn btn-outline-primary btn-lgrounded-pill">
+                <i class="bi bi-plus-circle me-2"></i> Crear Experiencia
             </a>
 
             <div class="card-body p-0">
@@ -33,38 +33,34 @@
                         <thead class="table-light">
                             <tr>
                                 <th class="text-start ps-4">ID</th>
-                                <th class="text-start">Nombre</th>
-                                <th class="text-start">Moneda</th>
-                                <th class="text-start">Salario Mínimo</th>
-                                <th class="text-start">Salario Promedio</th>
-                                <th class="text-start">Costo de Vida</th>
+                                <th class="text-start">Fecha publicacion</th>
+                                <th class="text-start">Título</th>
+                                <th class="text-start">Autor</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($destinos as $destino)
+                            @foreach ($experiencias as $experiencia)
                                 <tr>
-                                    <td class="text-start ps-4">{{ $destino->id }}</td>
-                                    <td class="text-start">{{ $destino->nombre }}</td>
-                                    <td class="text-start">{{ $destino->moneda }}</td>
-                                    <td class="text-start">{{ $destino->salario_minimo }}</td>
-                                    <td class="text-start">{{ $destino->salario_promedio }}</td>
-                                    <td class="text-start">{{ $destino->costo_vida_promedio }}</td>
+                                    <td class="text-start ps-4">{{ $experiencia->id }}</td>
+                                    <td class="text-start">{{ $experiencia->fecha_publicacion }}</td>
+                                    <td class="text-start">{{ $experiencia->titulo }}</td>
+                                    <td class="text-start">{{ $experiencia->autor }}</td>
 
                                     <td>
                                         <div class="d-flex justify-content-center">
 
-                                            <a href="{{ route('destinos.show', $destino->id) }}"
+                                            <a href="{{ route('experiencias.show', $experiencia->id) }}"
                                                 class="btn btn-sm btn-outline-info me-2 rounded-pill">
                                                 <i class="bi bi-eye"></i> Ver
                                             </a>
 
-                                            <a href="{{ route('destinos.edit', $destino->id) }}"
+                                            <a href="{{ route('experiencias.edit', $experiencia->id) }}"
                                                 class="btn btn-sm btn-outline-primary me-2 rounded-pill">
                                                 <i class="bi bi-pencil-square"></i> Editar
                                             </a>
 
-                                            <form method="POST" action="{{ route('destinos.destroy', $destino->id) }}">
+                                            <form method="POST" action="{{ route('experiencias.destroy', $experiencia->id) }}">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="button" class="btn btn-sm btn-outline-danger rounded-pill delete-btn">

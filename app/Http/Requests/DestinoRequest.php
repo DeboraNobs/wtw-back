@@ -22,14 +22,15 @@ class DestinoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nombre' => 'required|string',
-            'moneda' => 'required|string',
+            'nombre' => ['required', 'regex:/^[a-zA-Z\s]+$/'],
+            'moneda' => ['required', 'regex:/^[a-zA-Z\s]+$/'],
             'salario_minimo' => 'required|numeric',
             'salario_promedio' => 'required|numeric',
             'costo_vida_promedio' => 'required|numeric',
             'aplica_exterior' => 'required|boolean',
             'requiere_estudios' => 'required|boolean',
             'requiere_idiomas' => 'required|boolean',
+            'dificultad_visa' => 'required|numeric',
             'esta_disponible' => 'required|boolean',
         ];
     }
@@ -38,10 +39,10 @@ class DestinoRequest extends FormRequest
     {
         return [
             'nombre.required' => 'El nombre del destino es obligatorio.',
-            'nombre.string' => 'El nombre del destino debe ser una cadena de texto.',
+            'nombre.regex' => 'El nombre del destino solo puede contener letras y espacios.',
 
             'moneda.required' => 'La moneda es obligatoria.',
-            'moneda.string' => 'La moneda debe ser una cadena de texto.',
+            'moneda.regex' => 'La moneda solo puede contener letras y espacios.',
 
             'salario_minimo.required' => 'El salario mínimo es obligatorio.',
             'salario_minimo.numeric' => 'El salario mínimo debe ser un número.',
@@ -57,6 +58,9 @@ class DestinoRequest extends FormRequest
 
             'requiere_estudios.required' => 'Debe indicar si se requieren estudios.',
             'requiere_estudios.boolean' => 'El campo requiere estudios debe ser verdadero o falso.',
+
+            'dificultad_visa.required' => 'La dificultad de visa es obligatoria.',
+            'dificultad_visa.numeric' => 'La dificultad de visa debe ser un número.',
 
             'requiere_idiomas.required' => 'Debe indicar si se requieren idiomas.',
             'requiere_idiomas.boolean' => 'El campo requiere idiomas debe ser verdadero o falso.',

@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 use App\Models\Destino;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 
 class DestinosSeeder extends Seeder
 {
@@ -12,6 +12,38 @@ class DestinosSeeder extends Seeder
      */
     public function run(): void
     {
+        $imagenes = [
+            'alemania.jpeg',
+            'andorra.jpg',
+            'australia.avif',
+            'austria.jpg',
+            'canada.jpeg',
+            'espana.webp',
+            'francia.jpg',
+            'japon.webp',
+            'irlanda.jpg',
+            'islandia.webp',
+            'hungria.jpg',
+            'luxemburgo.jpg',
+            'nueva_zelanda.webp',
+            'polonia.jpg',
+            'portugal.jpg',
+            'republica_checa.jpg',
+            'suecia.jpg',
+        ];
+
+        foreach ($imagenes as $imagen) {
+            $rutaOrigen = storage_path("app/public/destinos/{$imagen}");
+
+            if (file_exists($rutaOrigen)) {
+                $rutaDestino = "destinos/{$imagen}";
+                Storage::disk('local')->put($rutaDestino, file_get_contents($rutaOrigen));
+            } else {
+                echo "El archivo {$imagen} no existe en la ruta especificada: {$rutaOrigen}\n";
+            }
+        }
+
+        // Crear los destinos con las imágenes
         $destino1 = new Destino();
         $destino1->nombre = 'Alemania';
         $destino1->moneda = 'Euro';
@@ -23,6 +55,7 @@ class DestinosSeeder extends Seeder
         $destino1->requiere_estudios = false;
         $destino1->requiere_idiomas = true;
         $destino1->esta_disponible = true;
+        $destino1->imagen = 'destinos/alemania.jpeg';
         $destino1->save();
 
         $destino2 = new Destino();
@@ -36,6 +69,7 @@ class DestinosSeeder extends Seeder
         $destino2->requiere_estudios = false;
         $destino2->requiere_idiomas = false;
         $destino2->esta_disponible = true;
+        $destino2->imagen = 'destinos/andorra.jpg';
         $destino2->save();
 
         $destino3 = new Destino();
@@ -49,6 +83,7 @@ class DestinosSeeder extends Seeder
         $destino3->requiere_estudios = false;
         $destino3->requiere_idiomas = true;
         $destino3->esta_disponible = true;
+        $destino3->imagen = 'destinos/australia.avif';
         $destino3->save();
 
         $destino4 = new Destino();
@@ -62,6 +97,7 @@ class DestinosSeeder extends Seeder
         $destino4->requiere_estudios = false;
         $destino4->requiere_idiomas = true;
         $destino4->esta_disponible = true;
+        $destino4->imagen = 'destinos/austria.jpg';
         $destino4->save();
 
         $destino5 = new Destino();
@@ -75,6 +111,7 @@ class DestinosSeeder extends Seeder
         $destino5->requiere_estudios = false;
         $destino5->requiere_idiomas = true;
         $destino5->esta_disponible = true;
+        $destino5->imagen = 'destinos/canada.jpeg';
         $destino5->save();
 
         $destino6 = new Destino();
@@ -88,6 +125,7 @@ class DestinosSeeder extends Seeder
         $destino6->requiere_estudios = false;
         $destino6->requiere_idiomas = false;
         $destino6->esta_disponible = true;
+        $destino6->imagen = 'destinos/espana.webp';
         $destino6->save();
 
         $destino7 = new Destino();
@@ -101,6 +139,7 @@ class DestinosSeeder extends Seeder
         $destino7->requiere_estudios = false;
         $destino7->requiere_idiomas = true;
         $destino7->esta_disponible = true;
+        $destino7->imagen = 'destinos/francia.jpg';
         $destino7->save();
 
         $destino8 = new Destino();
@@ -114,6 +153,7 @@ class DestinosSeeder extends Seeder
         $destino8->requiere_estudios = false;
         $destino8->requiere_idiomas = true;
         $destino8->esta_disponible = true;
+        $destino8->imagen = 'destinos/japon.webp';
         $destino8->save();
 
         $destino9 = new Destino();
@@ -127,6 +167,7 @@ class DestinosSeeder extends Seeder
         $destino9->requiere_estudios = false;
         $destino9->requiere_idiomas = true;
         $destino9->esta_disponible = true;
+        $destino9->imagen = 'destinos/irlanda.jpg';
         $destino9->save();
 
         $destino10 = new Destino();
@@ -140,6 +181,7 @@ class DestinosSeeder extends Seeder
         $destino10->requiere_estudios = false;
         $destino10->requiere_idiomas = true;
         $destino10->esta_disponible = true;
+        $destino10->imagen = 'destinos/islandia.webp';
         $destino10->save();
 
         $destino11 = new Destino();
@@ -153,6 +195,7 @@ class DestinosSeeder extends Seeder
         $destino11->requiere_estudios = false;
         $destino11->requiere_idiomas = true;
         $destino11->esta_disponible = true;
+        $destino11->imagen = 'destinos/hungria.jpg';
         $destino11->save();
 
         $destino12 = new Destino();
@@ -166,6 +209,7 @@ class DestinosSeeder extends Seeder
         $destino12->requiere_estudios = false;
         $destino12->requiere_idiomas = true;
         $destino12->esta_disponible = true;
+        $destino12->imagen = 'destinos/luxemburgo.jpg';
         $destino12->save();
 
         $destino13 = new Destino();
@@ -179,6 +223,7 @@ class DestinosSeeder extends Seeder
         $destino13->requiere_estudios = false;
         $destino13->requiere_idiomas = true;
         $destino13->esta_disponible = true;
+        $destino13->imagen = 'destinos/nueva_zelanda.webp';
         $destino13->save();
 
         $destino14 = new Destino();
@@ -192,6 +237,7 @@ class DestinosSeeder extends Seeder
         $destino14->requiere_estudios = false;
         $destino14->requiere_idiomas = true;
         $destino14->esta_disponible = true;
+        $destino14->imagen = 'destinos/polonia.jpg';
         $destino14->save();
 
         $destino15 = new Destino();
@@ -205,6 +251,7 @@ class DestinosSeeder extends Seeder
         $destino15->requiere_estudios = false;
         $destino15->requiere_idiomas = false;
         $destino15->esta_disponible = true;
+        $destino15->imagen = 'destinos/portugal.jpg';
         $destino15->save();
 
         $destino16 = new Destino();
@@ -218,6 +265,7 @@ class DestinosSeeder extends Seeder
         $destino16->requiere_estudios = false;
         $destino16->requiere_idiomas = true;
         $destino16->esta_disponible = true;
+        $destino16->imagen = 'destinos/republica_checa.jpg';
         $destino16->save();
 
         $destino17 = new Destino();
@@ -225,12 +273,13 @@ class DestinosSeeder extends Seeder
         $destino17->moneda = 'Corona sueca';
         $destino17->salario_minimo = 1685;
         $destino17->salario_promedio = 2900;
-        $destino17->costo_vida_promedio = 1500; 
+        $destino17->costo_vida_promedio = 1500;
         $destino17->dificultad_visa = 3;
         $destino17->aplica_exterior = true;
         $destino17->requiere_estudios = false;
         $destino17->requiere_idiomas = true;
         $destino17->esta_disponible = true;
+        $destino17->imagen = 'destinos/suecia.jpg';
         $destino17->save();
     }
 }

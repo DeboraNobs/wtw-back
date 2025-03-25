@@ -12,7 +12,7 @@
     <hr>
 </div>
 <div>
-    <a class="text-decoration-none" style="color: #6a11cb" href=""><i class="bi bi-chat-dots"></i>
+    <a class="text-decoration-none" style="color: #6a11cb" href="{{ route('asesorias.index') }}"><i class="bi bi-chat-dots"></i>
         Asesorias</a>
     <hr>
 </div>
@@ -22,17 +22,12 @@
     <hr>
 </div>
 <div>
-    <a class="text-decoration-none" style="color: #6a11cb" href=""><i class="bi bi-airplane"></i>
+    <a class="text-decoration-none" style="color: #6a11cb" href="{{ route('destinos.index') }}"><i class="bi bi-airplane"></i>
         Destinos </a>
     <hr>
 </div>
 <div>
-    <a class="text-decoration-none" style="color: #6a11cb" href=""><i class="bi bi-layers"></i>
-        Secciones </a>
-    <hr>
-</div>
-<div>
-    <a class="text-decoration-none" style="color: #6a11cb" href=""><i class="bi bi-briefcase"></i>
+    <a class="text-decoration-none" style="color: #6a11cb" href="{{ route('experiencias.index') }}"><i class="bi bi-briefcase"></i>
         Experiencias</a>
     <hr>
 </div>

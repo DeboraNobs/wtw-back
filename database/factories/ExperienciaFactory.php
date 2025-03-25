@@ -22,6 +22,7 @@ class ExperienciaFactory extends Factory
             'subtitulo' => $this->faker->sentence(10),
             'contenido' => $this->faker->paragraphs(3, true),
             'destino_id' => $this->faker->numberBetween(1, 17),
+            'autor' => $this->faker->name(), 
         ];
     }
 }

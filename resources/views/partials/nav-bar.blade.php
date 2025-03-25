@@ -11,15 +11,13 @@
 
           <a class="nav-link" href="{{ route('usuarios.index') }}">Usuarios</a>
 
-          <a class="nav-link" href=""> Asesorias</a>
+          <a class="nav-link" href="{{ route('asesorias.index') }}"> Asesorias</a>
 
           <a class="nav-link" href="{{ route('nacionalidades.index') }}">Nacionalidades</a>
 
-          <a class="nav-link" href="">Destinos</a>
+          <a class="nav-link" href="{{ route('destinos.index') }}">Destinos</a>
 
-          <a class="nav-link" href="">Secciones</a>
-
-          <a class="nav-link" href="">Experiencias</a>
+          <a class="nav-link" href="{{ route('experiencias.index') }}">Experiencias</a>
 
           <a class="nav-link" href="">Requisitos</a>
 

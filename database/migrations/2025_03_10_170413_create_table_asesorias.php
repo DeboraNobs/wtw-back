@@ -15,14 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('descripcion');
             $table->date('fecha_solicitud');
-            $table->string('destino');
-            $table->string('estado');
+            $table->string('estado')->default('Pendiente');
             $table->boolean('quiere_postulacion');
             $table->boolean('quiere_seguro');
             $table->boolean('quiere_asistencia_ilimitada');
 
-            $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade');
-            $table->foreignId('destino_nacionalidad_id')->constrained('destino_nacionalidad')->onDelete('cascade'); // o se puede colocar cada id por separado
+            // $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade');
+            $table->foreignId('usuario_id')->nullable()->constrained('usuarios')->onDelete('cascade');
+
+            $table->foreignId('nacionalidad_id')->constrained('nacionalidades')->onDelete('cascade');
+            $table->foreignId('destino_id')->constrained('destinos')->onDelete('cascade');
 
             $table->timestamps();
         });
