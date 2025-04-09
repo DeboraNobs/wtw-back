@@ -1,13 +1,13 @@
 @extends('template')
 
-@section('tituloNavegador', 'Experiencias')
+@section('tituloNavegador', 'Sucursales')
 
 @section('contenido')
     <div class="container py-3">
 
         <div class="card shadow-sm border-0 rounded-4 overflow-hidden mb-3">
             <div class="card-header bg-gradient-primary text-white py-3">
-                <h2 class="mb-0 text-center fw-light">Gestión de Experiencias</h2>
+                <h2 class="mb-0 text-center fw-light">Gestión de Sucursales</h2>
             </div>
         </div>
 
@@ -20,11 +20,11 @@
 
         <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
             <div class="card-header bg-light py-3">
-                <h4 class="mb-0 text-center fw-light">Listado de Experiencias</h4>
+                <h4 class="mb-0 text-center fw-light">Listado de Sucursales</h4>
             </div>
 
-            <a href="{{ route('experiencias.create') }}" class="btn btn-outline-primary btn-lgrounded-pill">
-                <i class="bi bi-plus-circle me-2"></i> Crear Experiencia
+            <a href="{{ route('sucursales.create') }}" class="btn btn-outline-primary btn-lgrounded-pill">
+                <i class="bi bi-plus-circle me-2"></i> Crear Sucursal
             </a>
 
             <div class="card-body p-0">
@@ -33,35 +33,39 @@
                         <thead class="table-light">
                             <tr>
                                 <th class="text-start ps-4">ID</th>
-                                <th class="text-start">Fecha publicacion</th>
-                                <th class="text-start">Autor</th>
+                                <th class="text-start">Nombre</th>
+                                <th class="text-start">Email</th>
+                                <th class="text-start">Año apertura</th>
+
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($experiencias as $experiencia)
+                            @foreach ($sucursales as $sucursal)
                                 <tr>
-                                    <td class="text-start ps-4">{{ $experiencia->id }}</td>
-                                    <td class="text-start">{{ $experiencia->fecha_publicacion }}</td>
-                                    <td class="text-start">{{ $experiencia->autor }}</td>
+                                    <td class="text-start ps-4">{{ $sucursal->id }}</td>
+                                    <td class="text-start">{{ $sucursal->nombre }}</td>
+                                    <td class="text-start">{{ $sucursal->email }}</td>
+                                    <td class="text-start">{{ $sucursal->anio_apertura }}</td>
 
                                     <td>
                                         <div class="d-flex justify-content-center">
-
-                                            <a href="{{ route('experiencias.show', $experiencia->id) }}"
+                                            <a href="{{ route('sucursales.show', $sucursal->id) }}"
                                                 class="btn btn-sm btn-outline-info me-2 rounded-pill">
                                                 <i class="bi bi-eye"></i> Ver
                                             </a>
 
-                                            <a href="{{ route('experiencias.edit', $experiencia->id) }}"
+                                            <a href="{{ route('sucursales.edit', $sucursal->id) }}"
                                                 class="btn btn-sm btn-primary me-2 rounded-pill">
                                                 <i class="bi bi-pencil-square"></i> Editar
                                             </a>
 
-                                            <form method="POST" action="{{ route('experiencias.destroy', $experiencia->id) }}">
+                                            <form method="POST"
+                                                action="{{ route('sucursales.destroy', $sucursal->id) }}">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="button" class="btn btn-sm btn-outline-danger rounded-pill delete-btn">
+                                                <button type="button"
+                                                    class="btn btn-sm btn-outline-danger rounded-pill">
                                                     <i class="bi bi-trash"></i> Eliminar
                                                 </button>
                                             </form>

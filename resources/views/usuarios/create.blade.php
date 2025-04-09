@@ -160,7 +160,7 @@
                     <input type="hidden" name="fecha_registro" value="{{ date('Y-m-d') }}">
 
                     <div class="d-grid mt-4">
-                        <button type="submit" class="btn btn-primary rounded-pill">
+                        <button type="submit" class="btn btn-outline-primary rounded-pill">
                             <i class="bi bi-{{ isset($usuario) ? 'pencil' : 'plus-circle' }} me-2"></i>
                             {{ isset($usuario) ? 'Editar Usuario' : 'Crear Usuario' }}
                         </button>
@@ -175,26 +175,5 @@
             </div>
         </div>
     </div>
-
-    <style>
-        .bg-gradient-primary {
-            background: linear-gradient(135deg, #6a11cb, #2365d7);
-        }
-
-        .form-control:focus {
-            border-color: #6a11cb;
-            box-shadow: 0 0 0 2px rgba(106, 17, 203, 0.1);
-        }
-
-        .btn-primary {
-            background-color: #6a11cb;
-            border: none;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #6a11cb, #2365d7);
-        }
-    </style>
 
 @endsection

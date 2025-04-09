@@ -3,7 +3,7 @@
 @section('tituloNavegador', 'Detalles del Destino')
 
 @section('contenido')
-<div class="container py-5">
+<div class="container py-3">
     <div class="card shadow-lg border-0 rounded-4">
         <div class="card-header bg-gradient-primary text-white py-4 text-center">
             <h2 class="fw-light">Detalles de {{ $destino->nombre }}</h2>
@@ -59,9 +59,4 @@
     </div>
 </div>
 
-<style>
-    .bg-gradient-primary {
-        background: linear-gradient(135deg, #6a11cb, #2365d7);
-    }
-</style>
 @endsection

@@ -3,7 +3,7 @@
 @section('tituloNavegador', 'Detalles de la experiencia')
 
 @section('contenido')
-<div class="container py-5 d-flex justify-content-center">
+<div class="container py-3 d-flex justify-content-center">
     <div class="card shadow-lg border-0 rounded-4" style="max-width: 800px;">
         <div class="card-header bg-gradient-primary text-white py-4 text-center rounded-top">
             <h2 class="fw-light">Detalles de la experiencia en {{ $experiencia->destino->nombre }}</h2>
@@ -49,9 +49,4 @@
     </div>
 </div>
 
-<style>
-    .bg-gradient-primary {
-        background: linear-gradient(135deg, #6a11cb, #2365d7);
-    }
-</style>
 @endsection

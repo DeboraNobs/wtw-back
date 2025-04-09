@@ -3,9 +3,9 @@
 @section('tituloNavegador', 'Nacionalidades')
 
 @section('contenido')
-    <div class="container py-5">
+    <div class="container py-3">
 
-        <div class="card shadow-sm border-0 rounded-4 overflow-hidden mb-4">
+        <div class="card shadow-sm border-0 rounded-4 overflow-hidden mb-3">
             <div class="card-header bg-gradient-primary text-white py-3">
                 <h2 class="mb-0 text-center fw-light">Gestión de Nacionalidades</h2>
             </div>
@@ -46,7 +46,7 @@
                                         <div class="d-flex justify-content-center">
 
                                             <a href="{{ route('nacionalidades.edit', $nacionalidad->id) }}"
-                                                class="btn btn-sm btn-outline-primary me-2 rounded-pill">
+                                                class="btn btn-sm btn-primary me-2 rounded-pill">
                                                 <i class="bi bi-pencil-square"></i> Editar
                                             </a>
 
@@ -72,24 +72,4 @@
 
     <script src="{{ asset('js/funciones.js') }}"></script>
 
-    <style>
-        .bg-gradient-primary {
-            background: linear-gradient(135deg, #6a11cb, #2365d7);
-        }
-
-        .table tbody tr:hover {
-            background-color: rgba(106, 17, 203, 0.05);
-        }
-
-        .btn-outline-primary {
-            border-color: #6a11cb;
-            color: #6a11cb;
-            transition: all 0.3s ease;
-        }
-
-        .btn-outline-primary:hover {
-            background-color: #6a11cb;
-            color: #fff;
-        }
-    </style>
 @endsection

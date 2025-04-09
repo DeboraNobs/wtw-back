@@ -1,0 +1,122 @@
+body,
+*::before,
+*::after {
+    font-family: 'Poppins', sans-serif;
+}
+
+.bg-gradient-primary {
+    background-color: rgba(143, 0, 255, 1);
+}
+
+.table tbody tr:hover {
+    background-color: rgba(106, 17, 203, 0.05);
+}
+
+h3 {
+    color: #40176b;
+}
+
+/* botón ver y botón volver */
+.btn-outline-info,
+.btn-outline-secondary {
+    background-color: #a780d1;
+    color: #40176b;
+    border: #780dea;
+}
+
+.btn-outline-info:hover,
+.btn-outline-secondary:hover {
+    background-color: #974fe4;
+    color: white;
+    border: #780dea;
+}
+
+/* botón crear */
+.btn-outline-primary {
+    background-image: linear-gradient(to right, #974fe4, #00FFA3);
+    color: #780dea;
+}
+
+.btn-outline-primary:hover {
+    background-image: #00FFA3;
+    color: white;
+}
+
+/* botón editar */
+.btn-primary {
+    background-color: rgba(80, 162, 197);
+    color: #6816c1;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: rgb(46, 119, 150);
+    color: white;
+    border: none;
+}
+
+/* botón eliminar */
+.btn-outline-danger {
+    background-color: #00FFA3;
+    color: #780dea;
+    border: #00FFA3;
+}
+
+.btn-outline-danger:hover {
+    background-color: #4ad6a3;
+    color: white;
+    border: #00FFA3;
+}
+
+/* NAVBAR */
+.custom-navbar {
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Marca */
+.custom-navbar .navbar-brand {
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+/* Links */
+.custom-navbar .nav-link {
+    color: #40176b;
+    position: relative;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+    color:#780dea;
+}
+
+/* Subrayado animado */
+.custom-navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background-image: linear-gradient(to right, #974fe4, #00FFA3);
+    transition: width 0.3s ease-in-out;
+}
+
+.custom-navbar .nav-link:hover::after {
+    width: 100%;
+}
+
+/* SIDE BAR */
+a {
+    text-decoration: none;
+    color: #6816c1;
+}
+
+/* Shows blade */
+.text-primary {
+    color: #40176b;
+}

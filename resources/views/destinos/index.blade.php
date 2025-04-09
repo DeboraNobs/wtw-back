@@ -3,9 +3,9 @@
 @section('tituloNavegador', 'Destinos')
 
 @section('contenido')
-    <div class="container py-5">
+    <div class="container py-3">
 
-        <div class="card shadow-sm border-0 rounded-4 overflow-hidden mb-4">
+        <div class="card shadow-sm border-0 rounded-4 overflow-hidden mb-3">
             <div class="card-header bg-gradient-primary text-white py-3">
                 <h2 class="mb-0 text-center fw-light">Gestión de Destinos</h2>
             </div>
@@ -32,9 +32,7 @@
                     <table class="table table-hover align-middle mb-0">
                         <thead class="table-light">
                             <tr>
-                                <th class="text-start ps-4">ID</th>
                                 <th class="text-start">Nombre</th>
-                                <th class="text-start">Moneda</th>
                                 <th class="text-start">Salario Mínimo</th>
                                 <th class="text-start">Salario Promedio</th>
                                 <th class="text-start">Costo de Vida</th>
@@ -44,9 +42,7 @@
                         <tbody>
                             @foreach ($destinos as $destino)
                                 <tr>
-                                    <td class="text-start ps-4">{{ $destino->id }}</td>
                                     <td class="text-start">{{ $destino->nombre }}</td>
-                                    <td class="text-start">{{ $destino->moneda }}</td>
                                     <td class="text-start">{{ $destino->salario_minimo }}</td>
                                     <td class="text-start">{{ $destino->salario_promedio }}</td>
                                     <td class="text-start">{{ $destino->costo_vida_promedio }}</td>
@@ -60,7 +56,7 @@
                                             </a>
 
                                             <a href="{{ route('destinos.edit', $destino->id) }}"
-                                                class="btn btn-sm btn-outline-primary me-2 rounded-pill">
+                                                class="btn btn-sm btn-primary me-2 rounded-pill">
                                                 <i class="bi bi-pencil-square"></i> Editar
                                             </a>
 
@@ -84,24 +80,4 @@
 
     <script src="{{ asset('js/funciones.js') }}"></script>
 
-    <style>
-        .bg-gradient-primary {
-            background: linear-gradient(135deg, #6a11cb, #2365d7);
-        }
-
-        .table tbody tr:hover {
-            background-color: rgba(106, 17, 203, 0.05);
-        }
-
-        .btn-outline-primary {
-            border-color: #6a11cb;
-            color: #6a11cb;
-            transition: all 0.3s ease;
-        }
-
-        .btn-outline-primary:hover {
-            background-color: #6a11cb;
-            color: #fff;
-        }
-    </style>
 @endsection

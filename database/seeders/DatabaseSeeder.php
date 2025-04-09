@@ -25,7 +25,8 @@ class DatabaseSeeder extends Seeder
             ArticulosCategoriasSeeder::class,
             AsesoriasSeeder::class,
             RequisitosSeeder::class,
-            DestinoNacionalidadRequisitosSeeder::class
+            DestinoNacionalidadRequisitosSeeder::class,
+            SucursalesSeeder::class
         ]);
 
 
