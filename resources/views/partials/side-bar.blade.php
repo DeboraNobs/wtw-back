@@ -34,7 +34,7 @@
         <hr>
     </div>
     <div>
-        <a href=""><i class="bi bi-file-earmark-text"></i>
+        <a href="{{ route('requisitos.index') }}"><i class="bi bi-file-earmark-text"></i>
             Requisitos</a>
         <hr>
     </div>

@@ -5,7 +5,7 @@ use App\Http\Controllers\NacionalidadController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\DestinoController;
 use App\Http\Controllers\ExperienciaController;
-use App\Http\Controllers\SeccionController;
+use App\Http\Controllers\RequisitoController;
 use App\Http\Controllers\SucursalController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +24,6 @@ Route::resource('experiencias', ExperienciaController::class);
 Route::resource('asesorias', AsesoriaController::class);
 
 Route::resource('sucursales', SucursalController::class);
+
+Route::resource('requisitos', RequisitoController::class);
+
