@@ -45,6 +45,11 @@
                                     <td>
                                         <div class="d-flex justify-content-center">
 
+                                            <a href="{{ route('requisitos.show', $requisito->id) }}"
+                                                class="btn btn-sm btn-outline-info me-2 rounded-pill">
+                                                <i class="bi bi-eye"></i> Ver
+                                            </a>
+
                                             <a href="{{ route('requisitos.edit', $requisito->id) }}"
                                                 class="btn btn-sm btn-primary me-2 rounded-pill">
                                                 <i class="bi bi-pencil-square"></i> Editar

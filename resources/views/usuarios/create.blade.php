@@ -25,7 +25,7 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-4"> <!-- nombre -->
-                            <label for="nombre" class="form-label text-muted small fw-bold">Nombre</label>
+                            <label for="nombre" class="form-label text-muted fw-bold">Nombre</label>
 
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
@@ -42,7 +42,7 @@
                         </div>
 
                         <div class="col-md-6 mb-4"> <!-- apellidos -->
-                            <label for="apellidos" class="form-label text-muted small fw-bold">Apellidos</label>
+                            <label for="apellidos" class="form-label text-muted fw-bold">Apellidos</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
                                     <i class="bi bi-person text-muted"></i>
@@ -60,7 +60,7 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-4"> <!-- email -->
-                            <label for="email" class="form-label text-muted small fw-bold">Email</label>
+                            <label for="email" class="form-label text-muted fw-bold">Email</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
                                     <i class="bi bi-envelope text-muted"></i>
@@ -75,7 +75,7 @@
                         </div>
 
                         <div class="col-md-6 mb-4"> <!-- rol -->
-                            <label for="rol" class="form-label text-muted small fw-bold">Rol</label>
+                            <label for="rol" class="form-label text-muted fw-bold">Rol</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
                                     <i class="bi bi-person-badge text-muted"></i>
@@ -98,7 +98,7 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-4"> <!-- contraseña -->
-                            <label for="password" class="form-label text-muted small fw-bold">Password</label>
+                            <label for="password" class="form-label text-muted fw-bold">Password</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
                                     <i class="bi bi-lock text-muted"></i>
@@ -113,7 +113,7 @@
                         </div>
 
                         <div class="col-md-6 mb-4"> <!-- fecha_nacimiento -->
-                            <label for="fecha_nacimiento" class="form-label text-muted small fw-bold">Fecha
+                            <label for="fecha_nacimiento" class="form-label text-muted fw-bold">Fecha
                                 Nacimiento</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
@@ -131,7 +131,7 @@
                     </div>
 
                     <div class="col-md-6 mb-4"> <!-- nacionalidad -->
-                        <label for="nacionalidad_id" class="form-label text-muted small fw-bold">Nacionalidad</label>
+                        <label for="nacionalidad_id" class="form-label text-muted fw-bold">Nacionalidad</label>
                         <div class="input-group">
                             <span class="input-group-text bg-light border-end-0">
                                 <i class="bi bi-globe text-muted"></i>
@@ -169,7 +169,7 @@
             </div>
 
             <div class="card-footer bg-light py-3 text-center">
-                <a href="{{ route('usuarios.index') }}" class="text-decoration-none text-muted small">
+                <a href="{{ route('usuarios.index') }}" class="text-decoration-none text-muted">
                     <i class="bi bi-arrow-left me-1"></i> Volver a la lista de usuarios
                 </a>
             </div>

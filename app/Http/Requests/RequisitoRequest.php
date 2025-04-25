@@ -22,7 +22,8 @@ class RequisitoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'requisito' => 'required|string|max:1000'
+            'requisito' => 'required|max:200|min:10',
+            'combinaciones' => 'required|array|min:1',
         ];
     }
 
@@ -33,8 +34,11 @@ class RequisitoRequest extends FormRequest
     {
         return [
             'requisito.required' => 'La descripción es obligatoria.',
-            'requisito.string' => 'La descripción debe ser un texto.',
-            'requisito.max' => 'La descripción no puede tener más de 1000 caracteres.',
+            'requisito.min' => 'La descripción debe tener al menos 10 caracteres.',
+            'requisito.max' => 'La descripción no puede tener más de 200 caracteres.',
+
+            'combinaciones.required' => 'Debe seleccionar al menos una combinación destino-nacionalidad.',
+            'combinaciones.min' => 'Debe seleccionar al menos una combinación destino-nacionalidad.',
         ];
     }
 }

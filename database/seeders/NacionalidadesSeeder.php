@@ -14,8 +14,8 @@ class NacionalidadesSeeder extends Seeder
     public function run(): void
     {
         Nacionalidad::create(['id' => 1, 'nacionalidad' => 'Argentina']);
-        Nacionalidad::create(['id' => 2, 'nacionalidad' => 'Chile']);
-        Nacionalidad::create(['id' => 3, 'nacionalidad' => 'Uruguay']);
-        Nacionalidad::create(['id' => 4, 'nacionalidad' => 'España']);
+        Nacionalidad::create(['id' => 2, 'nacionalidad' => 'Chilena']);
+        Nacionalidad::create(['id' => 3, 'nacionalidad' => 'Uruguaya']);
+        Nacionalidad::create(['id' => 4, 'nacionalidad' => 'Española']);
     }
 }

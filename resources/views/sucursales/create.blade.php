@@ -24,7 +24,7 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-4"> <!-- Nombre -->
-                            <label for="nombre" class="form-label text-muted small fw-bold">Nombre</label>
+                            <label for="nombre" class="form-label text-muted fw-bold">Nombre</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
                                     <i class="bi bi-building text-muted"></i>
@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="col-md-6 mb-4"> <!-- Direccion -->
-                            <label for="direccion" class="form-label text-muted small fw-bold">Direccion</label>
+                            <label for="direccion" class="form-label text-muted fw-bold">Direccion</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
                                     <i class="bi bi-house-door text-muted"></i>
@@ -57,7 +57,7 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-4"> <!-- Latitud -->
-                            <label for="latitud" class="form-label text-muted small fw-bold">Latitud</label>
+                            <label for="latitud" class="form-label text-muted fw-bold">Latitud</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
                                     <i class="bi bi-compass text-muted"></i>
@@ -72,7 +72,7 @@
                         </div>
 
                         <div class="col-md-6 mb-4"> <!-- Longitud -->
-                            <label for="longitud" class="form-label text-muted small fw-bold">Longitud</label>
+                            <label for="longitud" class="form-label text-muted fw-bold">Longitud</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
                                     <i class="bi bi-compass text-muted"></i>
@@ -89,7 +89,7 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-4"> <!-- Email -->
-                            <label for="email" class="form-label text-muted small fw-bold">Email</label>
+                            <label for="email" class="form-label text-muted fw-bold">Email</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
                                     <i class="bi bi-envelope text-muted"></i>
@@ -104,7 +104,7 @@
                         </div>
 
                         <div class="col-md-6 mb-4"> <!-- Año apertura -->
-                            <label for="anio_apertura" class="form-label text-muted small fw-bold">Año apertura</label>
+                            <label for="anio_apertura" class="form-label text-muted fw-bold">Año apertura</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
                                     <i class="bi bi-calendar text-muted"></i>
@@ -130,7 +130,7 @@
             </div>
 
             <div class="card-footer bg-light py-3 text-center">
-                <a href="{{ route('sucursales.index') }}" class="text-decoration-none text-muted small">
+                <a href="{{ route('sucursales.index') }}" class="text-decoration-none text-muted">
                     <i class="bi bi-arrow-left me-1"></i> Volver a la lista de sucursales
                 </a>
             </div>

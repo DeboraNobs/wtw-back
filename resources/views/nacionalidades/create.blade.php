@@ -23,7 +23,7 @@
                     @endif
 
                     <div class="mb-4">
-                        <label for="nombre" class="form-label text-muted small fw-bold">Nacionalidad</label>
+                        <label for="nombre" class="form-label text-muted fw-bold">Nacionalidad</label>
                         <div class="input-group">
                             <span class="input-group-text bg-light border-end-0">
                                 <i class="bi bi-flag text-muted"></i>
@@ -32,7 +32,7 @@
                                 value="{{ isset($nacionalidad) ? $nacionalidad->nacionalidad : '' }}"
                                 placeholder="Ingrese una nacionalidad" required>
                         </div>
-                        <div class="invalid-feedback small">
+                        <div class="invalid-feedback">
                             Por favor, ingrese una nacionalidad válida.
                         </div>
                     </div>
@@ -47,7 +47,7 @@
             </div>
 
             <div class="card-footer bg-light py-3 text-center">
-                <a href="{{ route('nacionalidades.index') }}" class="text-decoration-none text-muted small">
+                <a href="{{ route('nacionalidades.index') }}" class="text-decoration-none text-muted">
                     <i class="bi bi-arrow-left me-1"></i> Volver a la lista de nacionalidades
                 </a>
             </div>

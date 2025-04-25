@@ -35,7 +35,7 @@
                     @if (isset($asesoria))
                         <!-- Solo dejo editar el estado a la persona que edita, siempre que se cree una asesoría será pendiente -->
                         <div class="mb-4">
-                            <label class="form-label text-muted small fw-bold"> Estado </label>
+                            <label class="form-label text-muted fw-bold"> Estado </label>
 
                             <select class="form-control" name="estado" required>
                                 <option value="">Selecciona el estado de la asesoría</option>
@@ -58,7 +58,7 @@
 
 
                     <div class="mb-4">
-                        <label class="form-label text-muted small fw-bold">Descripción</label>
+                        <label class="form-label text-muted fw-bold">Descripción</label>
                         <textarea class="form-control" name="descripcion" required>{{ old('descripcion', $asesoria->descripcion ?? '') }}</textarea>
 
                         @if ($errors->has('descripcion'))
@@ -67,7 +67,7 @@
                     </div>
 
                     <div class="mb-4">
-                        <label class="form-label text-muted small fw-bold">Fecha de Solicitud</label>
+                        <label class="form-label text-muted fw-bold">Fecha de Solicitud</label>
                         <input type="date" class="form-control" name="fecha_solicitud"
                             value="{{ old('fecha_solicitud', $asesoria->fecha_solicitud ?? '') }}" required>
 
@@ -78,7 +78,7 @@
 
                     <!-- Nacionalidades -->
                     <div class="mb-4">
-                        <label class="form-label text-muted small fw-bold"> Nacionalidad </label>
+                        <label class="form-label text-muted fw-bold"> Nacionalidad </label>
 
                         <select class="form-control" name="nacionalidad_id" required>
                             <option value="">Selecciona una nacionalidad</option>
@@ -97,7 +97,7 @@
 
 
                     <div class="mb-4">
-                        <label class="form-label text-muted small fw-bold">Destino</label>
+                        <label class="form-label text-muted fw-bold">Destino</label>
 
                         <select class="form-control" name="destino_id" required>
                             <option value="">Selecciona un destino</option>
@@ -117,7 +117,7 @@
                     <!-- ¿Quiere Postulación? -->
                     <div class="col-md-6 mb-4">
                         <fieldset>
-                            <legend class="form-label text-muted small fw-bold">¿Quiere Postulación?</legend>
+                            <label class="form-label text-muted fw-bold">¿Quiere Postulación?</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
                                     <i class="bi bi-check-circle text-muted"></i>
@@ -146,7 +146,7 @@
                     <!-- ¿Quiere Seguro? -->
                     <div class="col-md-6 mb-4">
                         <fieldset>
-                            <legend class="form-label text-muted small fw-bold">¿Quiere Seguro?</legend>
+                            <label class="form-label text-muted fw-bold">¿Quiere Seguro?</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
                                     <i class="bi bi-shield-check text-muted"></i>
@@ -175,7 +175,7 @@
                     <!-- ¿Quiere Asistencia Ilimitada? -->
                     <div class="col-md-6 mb-4">
                         <fieldset>
-                            <legend class="form-label text-muted small fw-bold">¿Quiere Asistencia Ilimitada?</legend>
+                            <label class="form-label text-muted fw-bold">¿Quiere Asistencia Ilimitada?</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
                                     <i class="bi bi-person-check text-muted"></i>
@@ -211,7 +211,7 @@
             </div>
 
             <div class="card-footer bg-light py-3 text-center">
-                <a href="{{ route('asesorias.index') }}" class="text-decoration-none text-muted small">
+                <a href="{{ route('asesorias.index') }}" class="text-decoration-none text-muted">
                     <i class="bi bi-arrow-left me-1"></i> Volver a la lista de asesorías
                 </a>
             </div>

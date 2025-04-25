@@ -12,7 +12,7 @@ class Requisito extends Model
     public function destino() {
         return $this->belongsToMany(Destino::class);
     }
-        
+
     public function nacionalidad() {
         return $this->belongsToMany(Nacionalidad::class);
     }
@@ -25,7 +25,7 @@ class Requisito extends Model
 
     public function nacionalidades()
     {
-        return $this->belongsToMany(Nacionalidad::class, 'destino_nacionalidad_requisitos', 'requisito_id', 'nacionalidad_id');
+        return $this->belongsToMany(Nacionalidad::class, 'destino_nacionalidad_requisitos', 'requisito_id', 'destino_nacionalidad_id');
     }
 
 }

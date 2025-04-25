@@ -24,7 +24,7 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-4"> <!-- nombre -->
-                            <label for="nombre" class="form-label text-muted small fw-bold">Nombre</label>
+                            <label for="nombre" class="form-label text-muted fw-bold">Nombre</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
                                     <i class="bi bi-geo-alt text-muted"></i>
@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="col-md-6 mb-4"> <!-- moneda -->
-                            <label for="moneda" class="form-label text-muted small fw-bold">Moneda</label>
+                            <label for="moneda" class="form-label text-muted fw-bold">Moneda</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
                                     <i class="bi bi-cash-coin text-muted"></i>
@@ -56,7 +56,7 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-4"> <!-- salario_minimo -->
-                            <label for="salario_minimo" class="form-label text-muted small fw-bold">Salario mínimo</label>
+                            <label for="salario_minimo" class="form-label text-muted fw-bold">Salario mínimo</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
                                     <i class="bi bi-currency-dollar text-muted"></i>
@@ -72,7 +72,7 @@
                         </div>
 
                         <div class="col-md-6 mb-4"> <!-- salario_promedio -->
-                            <label for="salario_promedio" class="form-label text-muted small fw-bold">Salario
+                            <label for="salario_promedio" class="form-label text-muted fw-bold">Salario
                                 promedio</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
@@ -91,7 +91,7 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-4"> <!-- costo_vida_promedio -->
-                            <label for="costo_vida_promedio" class="form-label text-muted small fw-bold">Costo de vida
+                            <label for="costo_vida_promedio" class="form-label text-muted fw-bold">Costo de vida
                                 promedio</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
@@ -108,7 +108,7 @@
                         </div>
 
                         <div class="col-md-6 mb-4"> <!-- dificultad_visa -->
-                            <label for="dificultad_visa" class="form-label text-muted small fw-bold">Dificultad de
+                            <label for="dificultad_visa" class="form-label text-muted fw-bold">Dificultad de
                                 visa</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
@@ -133,7 +133,7 @@
 
                     <div class="row">
                         <div class="col-md-12 mb-4">
-                            <label for="imagen" class="form-label text-muted small fw-bold">Imagen del destino</label>
+                            <label for="imagen" class="form-label text-muted fw-bold">Imagen del destino</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
                                     <i class="bi bi-image text-muted"></i>
@@ -143,7 +143,7 @@
                             </div>
 
                             @if (isset($destino->imagen))
-                                <p class="text-muted small mt-2">Imagen actual: {{ $destino->imagen }}</p>
+                                <p class="text-muted mt-2">Imagen actual: {{ $destino->imagen }}</p>
                             @endif
 
                             @if ($errors->has('imagen'))
@@ -157,7 +157,7 @@
                         <!-- Aplica desde exterior -->
                         <div class="col-md-6 mb-4">
                             <fieldset>
-                                <legend class="form-label text-muted small fw-bold">Aplicar desde exterior:</legend>
+                                <label class="form-label text-muted fw-bold">Aplicar desde exterior:</label>
                                 <div class="input-group">
                                     <span class="input-group-text bg-light border-end-0">
                                         <i class="bi bi-globe text-muted"></i>
@@ -186,7 +186,7 @@
                         <!-- Requiere estudios -->
                         <div class="col-md-6 mb-4">
                             <fieldset>
-                                <legend class="form-label text-muted small fw-bold">Requiere estudios:</legend>
+                                <label class="form-label text-muted fw-bold">Requiere estudios:</label>
                                 <div class="input-group">
                                     <span class="input-group-text bg-light border-end-0">
                                         <i class="bi bi-book text-muted"></i>
@@ -217,7 +217,7 @@
                         <!-- Requiere idiomas -->
                         <div class="col-md-6 mb-4">
                             <fieldset>
-                                <legend class="form-label text-muted small fw-bold">Requiere idiomas:</legend>
+                                <label class="form-label text-muted fw-bold">Requiere idiomas:</label>
                                 <div class="input-group">
                                     <span class="input-group-text bg-light border-end-0">
                                         <i class="bi bi-translate text-muted"></i>
@@ -246,7 +246,7 @@
                         <!-- Está disponible -->
                         <div class="col-md-6 mb-4">
                             <fieldset>
-                                <legend class="form-label text-muted small fw-bold">Está disponible:</legend>
+                                <label class="form-label text-muted fw-bold">Está disponible:</label>
                                 <div class="input-group">
                                     <span class="input-group-text bg-light border-end-0">
                                         <i class="bi bi-check2-circle text-muted"></i>
@@ -283,7 +283,7 @@
             </div>
 
             <div class="card-footer bg-light py-3 text-center">
-                <a href="{{ route('destinos.index') }}" class="text-decoration-none text-muted small">
+                <a href="{{ route('destinos.index') }}" class="text-decoration-none text-muted">
                     <i class="bi bi-arrow-left me-1"></i> Volver a la lista de destinos
                 </a>
             </div>

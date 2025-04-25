@@ -25,7 +25,7 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-4"> <!-- Destinos -->
-                            <label for="destino" class="form-label text-muted small fw-bold">Destino</label>
+                            <label for="destino" class="form-label text-muted fw-bold">Destino</label>
 
                             <select class="form-select" name="destino_id" required>
                                 <option value="">Seleccione un destino</option>
@@ -43,7 +43,7 @@
                         </div>
 
                         <div class="col-md-6 mb-4"> <!-- autor -->
-                            <label for="autor" class="form-label text-muted small fw-bold">Autor</label>
+                            <label for="autor" class="form-label text-muted fw-bold">Autor</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
                                     <i class="bi bi-house text-muted"></i>
@@ -61,7 +61,7 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-4"> <!-- fecha_publicacion -->
-                            <label for="fecha_publicacion" class="form-label text-muted small fw-bold">Fecha
+                            <label for="fecha_publicacion" class="form-label text-muted fw-bold">Fecha
                                 publicacion</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
@@ -77,7 +77,7 @@
                         </div>
 
                         <div class="col-md-6 mb-4"> <!-- titulo -->
-                            <label for="titulo" class="form-label text-muted small fw-bold">Título</label>
+                            <label for="titulo" class="form-label text-muted fw-bold">Título</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
                                     <i class="bi bi-cash-coin text-muted"></i>
@@ -94,7 +94,7 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-4"> <!-- subtitulo -->
-                            <label for="subtitulo" class="form-label text-muted small fw-bold">Subtítulo</label>
+                            <label for="subtitulo" class="form-label text-muted fw-bold">Subtítulo</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
                                     <i class="bi bi-currency-dollar text-muted"></i>
@@ -110,7 +110,7 @@
                         </div>
 
                         <div class="col-md-6 mb-4"> <!-- contenido -->
-                            <label for="contenido" class="form-label text-muted small fw-bold">Contenido</label>
+                            <label for="contenido" class="form-label text-muted fw-bold">Contenido</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
                                     <i class="bi bi-currency-exchange text-muted"></i>
@@ -136,7 +136,7 @@
             </div>
 
             <div class="card-footer bg-light py-3 text-center">
-                <a href="{{ route('experiencias.index') }}" class="text-decoration-none text-muted small">
+                <a href="{{ route('experiencias.index') }}" class="text-decoration-none text-muted">
                     <i class="bi bi-arrow-left me-1"></i> Volver a la lista de experiencias
                 </a>
             </div>
