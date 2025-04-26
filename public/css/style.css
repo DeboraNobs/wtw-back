@@ -121,6 +121,14 @@ h3 {
     width: 100%;
 }
 
+/* Eliminar subrayado en mobile */
+@media (max-width: 991.98px) {
+    .custom-navbar .nav-link::after {
+        display: none;
+    }
+}
+
+
 /* ----  SIDE BAR  ---- */
 a {
     text-decoration: none;
@@ -129,6 +137,12 @@ a {
 
 /* Shows blade */
 .text-primary {
+    color: #40176b;
+}
+
+/* Home blade */
+.fecha {
+    font-size:larger;
     color: #40176b;
 }
 

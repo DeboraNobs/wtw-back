@@ -21,6 +21,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <title>@yield('tituloNavegador')</title>
+
 </head>
 <style>
     .error-msg{
@@ -31,25 +32,23 @@
 <body>
     <div style="background-color: #f8f9fa">
         @include ('partials.nav-bar')
-        {{-- <div class="container-md d-flex justify-content-end">
-            <div> {{ fechaActual('d/m/Y') }} </div>
-        </div> --}}
-        <div class="container-md d-flex justify-content-end">
 
+        <div class="container-md d-flex justify-content-end">
         </div>
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-3 ms-2 border-end border-2" style="color:#278a81">
+                <div class="col-2 ms-2 border-end border-2" style="color:#278a81">
                     @include('partials.side-bar')
+                    <img src="{{ asset('images/map.png')}}" class="ms-4" alt="valija-side-bar" style="width: 60%; height: auto; object-fit: cover;">
                 </div>
-                <div class="col-8">
+                <div class="col-9 ms-5">
                     @yield('contenido')
                 </div>
             </div>
         </div>
+
     </div>
 </body>
 
 </html>
-
