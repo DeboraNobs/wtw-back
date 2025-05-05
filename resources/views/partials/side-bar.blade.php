@@ -3,19 +3,21 @@
         Inicio </a>
     <hr>
 </div>
+@if (auth()->check() && auth()->user()->rol === 'admin')
 <div>
     <a href="{{ route('usuarios.index') }}"><i class="bi bi-person"></i>
         Usuarios</a>
     <hr>
 </div>
 <div>
-    <a href="{{ route('asesorias.index') }}"><i class="bi bi-chat-dots"></i>
-        Asesorias</a>
-    <hr>
-</div>
-<div>
     <a href="{{ route('nacionalidades.index') }}"><i class="bi bi-globe"></i>
         Nacionalidades</a>
+    <hr>
+</div>
+@endif
+<div>
+    <a href="{{ route('asesorias.index') }}"><i class="bi bi-chat-dots"></i>
+        Asesorias</a>
     <hr>
 </div>
 <div>

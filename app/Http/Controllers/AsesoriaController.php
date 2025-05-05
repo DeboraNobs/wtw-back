@@ -43,7 +43,7 @@ class AsesoriaController extends Controller
         $asesoria->quiere_postulacion = $request->quiere_postulacion;
         $asesoria->quiere_seguro = $request->quiere_seguro;
         $asesoria->quiere_asistencia_ilimitada = $request->quiere_asistencia_ilimitada;
-        // $asesoria->usuario_id = $request->usuario_id;
+        $asesoria->usuario_id = $request->usuario_id;
         $asesoria->nacionalidad_id = $request->nacionalidad_id;
         $asesoria->destino_id = $request->destino_id;
         $asesoria->save();

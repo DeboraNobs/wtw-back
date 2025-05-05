@@ -23,9 +23,11 @@
                 <h4 class="mb-0 text-center fw-light">Listado de Sucursales</h4>
             </div>
 
-            <a href="{{ route('sucursales.create') }}" class="btn btn-outline-primary btn-lgrounded-pill">
-                <i class="bi bi-plus-circle me-2"></i> Crear Sucursal
-            </a>
+            @if (auth()->user()->rol === 'admin')
+                <a href="{{ route('sucursales.create') }}" class="btn btn-outline-primary btn-lgrounded-pill">
+                    <i class="bi bi-plus-circle me-2"></i> Crear Sucursal
+                </a>
+            @endif
 
             <div class="card-body p-0">
                 <div class="table-responsive">
@@ -55,20 +57,23 @@
                                                 <i class="bi bi-eye"></i> Ver
                                             </a>
 
-                                            <a href="{{ route('sucursales.edit', $sucursal->id) }}"
-                                                class="btn btn-sm btn-primary me-2 rounded-pill">
-                                                <i class="bi bi-pencil-square"></i> Editar
-                                            </a>
+                                            @if (auth()->user()->rol === 'admin')
+                                                <a href="{{ route('sucursales.edit', $sucursal->id) }}"
+                                                    class="btn btn-sm btn-primary me-2 rounded-pill">
+                                                    <i class="bi bi-pencil-square"></i> Editar
+                                                </a>
 
-                                            <form method="POST"
-                                                action="{{ route('sucursales.destroy', $sucursal->id) }}">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="button"
-                                                    class="btn btn-sm btn-outline-danger rounded-pill">
-                                                    <i class="bi bi-trash"></i> Eliminar
-                                                </button>
-                                            </form>
+                                                <form method="POST"
+                                                    action="{{ route('sucursales.destroy', $sucursal->id) }}">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-outline-danger rounded-pill">
+                                                        <i class="bi bi-trash"></i> Eliminar
+                                                    </button>
+                                                </form>
+                                            @endif
+
                                         </div>
                                     </td>
                                 </tr>

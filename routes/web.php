@@ -19,17 +19,22 @@ Route::post('login', [LoginController::class, 'login']);
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 
-Route::resource('nacionalidades', NacionalidadController::class);
+Route::middleware('RolCheck:admin')->group(function () {
+    Route::resource('nacionalidades', NacionalidadController::class);
+    Route::resource('usuarios', UsuarioController::class);
+    Route::resource('destinos', DestinoController::class);
+    Route::resource('experiencias', ExperienciaController::class);
+    Route::resource('asesorias', AsesoriaController::class);
+    Route::resource('sucursales', SucursalController::class);
+    Route::resource('requisitos', RequisitoController::class);
 
-Route::resource('usuarios', UsuarioController::class);
+});
 
-Route::resource('destinos', DestinoController::class);
-
-Route::resource('experiencias', ExperienciaController::class);
-
-Route::resource('asesorias', AsesoriaController::class);
-
-Route::resource('sucursales', SucursalController::class);
-
-Route::resource('requisitos', RequisitoController::class);
-
+// el usuario no debe poder ver nada de usuarios ni de nacionalidades
+Route::middleware('RolCheck:usuario')->group(function () {
+    Route::resource('sucursales', SucursalController::class)->only(['index', 'show']);
+    Route::resource('experiencias', ExperienciaController::class)->only(['index', 'show', 'create', 'store']); // debe poder crear una experiencia
+    Route::resource('requisitos', RequisitoController::class)->only(['index', 'show']);
+    Route::resource('destinos', DestinoController::class)->only(['index', 'show']);
+    Route::resource('asesorias', AsesoriaController::class)->only(['index','create', 'store']);
+});

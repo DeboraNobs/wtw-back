@@ -20,9 +20,7 @@ return new class extends Migration
             $table->boolean('quiere_seguro');
             $table->boolean('quiere_asistencia_ilimitada');
 
-            // $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade');
-            $table->foreignId('usuario_id')->nullable()->constrained('usuarios')->onDelete('cascade');
-
+            $table->foreignId('usuario_id')->constrained('usuarios')->onDelete('cascade');
             $table->foreignId('nacionalidad_id')->constrained('nacionalidades')->onDelete('cascade');
             $table->foreignId('destino_id')->constrained('destinos')->onDelete('cascade');
 

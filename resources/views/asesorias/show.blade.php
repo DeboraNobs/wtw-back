@@ -42,13 +42,15 @@
                             <i class="bi bi-check-circle text-dark fs-4"></i>
                             <h5 class="fw-light">Estado</h5>
                             <span
-                                class="btn btn-outline-{{ $asesoria->estado == 'Pendiente'
-                                    ? 'success'
-                                    : ($asesoria->estado == 'En_proceso'
-                                        ? 'warning'
-                                        : ($asesoria->estado == 'Finalizado'
-                                            ? 'info'
-                                            : 'secondary')) }}">
+                                class="btn {{ $asesoria->estado == 'Pendiente'
+                                    ? 'btn-outline-success'
+                                    : ($asesoria->estado == 'Confirmada'
+                                        ? 'btn-outline-warning'
+                                        : ($asesoria->estado == 'Pagada'
+                                            ? 'btn-outline-info'
+                                            : ($asesoria->estado == 'Cancelada'
+                                                ? 'btn-outline-danger'
+                                                : 'btn-outline-secondary'))) }}">
                                 {{ ucfirst($asesoria->estado) }}
                             </span>
                         </div>
@@ -104,10 +106,12 @@
                     <a href="{{ route('asesorias.index') }}" class="btn btn-outline-secondary rounded-pill px-4">
                         <i class="bi bi-arrow-left text-dark"></i> Volver
                     </a>
-                    <a href="{{ route('asesorias.edit', $asesoria->id) }}"
-                        class="btn btn-outline-primary rounded-pill px-4">
-                        <i class="bi bi-pencil-square text-dark"></i> Editar
-                    </a>
+                    @if (auth()->user()->rol === 'admin')
+                        <a href="{{ route('asesorias.edit', $asesoria->id) }}"
+                            class="btn btn-outline-primary rounded-pill px-4">
+                            <i class="bi bi-pencil-square text-dark"></i> Editar
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>

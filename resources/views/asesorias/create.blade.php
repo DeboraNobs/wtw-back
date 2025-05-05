@@ -31,9 +31,10 @@
                         </div>
                     @endif
 
+                    <input type="hidden" name="usuario_id" value="{{ auth()->id() }}">
+
                     <!-- Estado de la asesoría -->
                     @if (isset($asesoria))
-                        <!-- Solo dejo editar el estado a la persona que edita, siempre que se cree una asesoría será pendiente -->
                         <div class="mb-4">
                             <label class="form-label text-muted fw-bold"> Estado </label>
 
@@ -42,11 +43,14 @@
                                 <option value="Pendiente"
                                     {{ old('estado', $asesoria->estado) == 'Pendiente' ? 'selected' : '' }}>Pendiente
                                 </option>
-                                <option value="En_proceso"
-                                    {{ old('estado', $asesoria->estado) == 'En_proceso' ? 'selected' : '' }}>En proceso
+                                <option value="Cancelada"
+                                    {{ old('estado', $asesoria->estado) == 'Cancelada' ? 'selected' : '' }}>Cancelada
                                 </option>
-                                <option value="Finalizado"
-                                    {{ old('estado', $asesoria->estado) == 'Finalizado' ? 'selected' : '' }}>Finalizado
+                                <option value="Confirmada"
+                                    {{ old('estado', $asesoria->estado) == 'Confirmada' ? 'selected' : '' }}>Confirmada
+                                </option>
+                                <option value="Pagada"
+                                    {{ old('estado', $asesoria->estado) == 'Pagada' ? 'selected' : '' }}>Pagada
                                 </option>
                             </select>
 

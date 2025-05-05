@@ -48,15 +48,17 @@
             <p class="text-muted mb-1"><i class="bi bi-check-circle"></i> Disponible: {{ $destino->esta_disponible ? 'Sí' : 'No' }}</p>
 
             <div class="d-flex justify-content-center gap-3">
-                
+
                 <a href="{{ route('destinos.index') }}" class="btn btn-outline-secondary rounded-pill">
                     <i class="bi bi-arrow-left"></i> Volver
                 </a>
 
-                <a href="{{ route('destinos.edit', $destino->id) }}" class="btn btn-outline-primary rounded-pill">
-                    <i class="bi bi-pencil-square"></i> Editar
-                </a>
-
+                @if (auth()->user()->rol === 'admin')
+                    <a href="{{ route('destinos.edit', $destino->id) }}" class="btn btn-outline-primary rounded-pill">
+                        <i class="bi bi-pencil-square"></i> Editar
+                    </a>
+                @endif
+                
             </div>
         </div>
     </div>

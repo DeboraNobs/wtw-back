@@ -59,10 +59,12 @@
                             <i class="bi bi-arrow-left"></i> Volver
                         </a>
 
-                        <a href="{{ route('requisitos.edit', $requisito->id) }}" class="btn btn-outline-primary rounded-pill">
-                            <i class="bi bi-pencil-square"></i> Editar
-                        </a>
-
+                        @if (auth()->user()->rol === 'admin')
+                            <a href="{{ route('requisitos.edit', $requisito->id) }}" class="btn btn-outline-primary rounded-pill">
+                                <i class="bi bi-pencil-square"></i> Editar
+                            </a>
+                        @endif
+                        
                     </div>
                 </div>
             </div>

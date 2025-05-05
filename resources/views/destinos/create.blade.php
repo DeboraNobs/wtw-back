@@ -23,7 +23,7 @@
                     @endif
 
                     <div class="row">
-                        <div class="col-md-6 mb-4"> <!-- nombre -->
+                        <di class="col-md-6 mb-4"> <!-- nombre -->
                             <label for="nombre" class="form-label text-muted fw-bold">Nombre</label>
                             <div class="input-group">
                                 <span class="input-group-text bg-light border-end-0">
@@ -36,7 +36,8 @@
                             @if ($errors->has('nombre'))
                                 <p class="text-danger">{{ $errors->first('nombre') }}</p>
                             @endif
-                        </div>
+                        </di
+                        v>
 
                         <div class="col-md-6 mb-4"> <!-- moneda -->
                             <label for="moneda" class="form-label text-muted fw-bold">Moneda</label>

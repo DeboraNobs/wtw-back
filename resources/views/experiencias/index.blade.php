@@ -53,18 +53,21 @@
                                                 <i class="bi bi-eye"></i> Ver
                                             </a>
 
-                                            <a href="{{ route('experiencias.edit', $experiencia->id) }}"
-                                                class="btn btn-sm btn-primary me-2 rounded-pill">
-                                                <i class="bi bi-pencil-square"></i> Editar
-                                            </a>
+                                            @if (auth()->user()->rol === 'admin')
+                                                <a href="{{ route('experiencias.edit', $experiencia->id) }}"
+                                                    class="btn btn-sm btn-primary me-2 rounded-pill">
+                                                    <i class="bi bi-pencil-square"></i> Editar
+                                                </a>
 
-                                            <form method="POST" action="{{ route('experiencias.destroy', $experiencia->id) }}">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="button" class="btn btn-sm btn-outline-danger rounded-pill delete-btn">
-                                                    <i class="bi bi-trash"></i> Eliminar
-                                                </button>
-                                            </form>
+                                                <form method="POST" action="{{ route('experiencias.destroy', $experiencia->id) }}">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="button" class="btn btn-sm btn-outline-danger rounded-pill delete-btn">
+                                                        <i class="bi bi-trash"></i> Eliminar
+                                                    </button>
+                                                </form>
+                                            @endif
+                                            
                                         </div>
                                     </td>
                                 </tr>

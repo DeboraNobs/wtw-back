@@ -27,7 +27,7 @@ class AsesoriaRequest extends FormRequest
             'quiere_postulacion' => 'required|boolean',
             'quiere_seguro' => 'required|boolean',
             'quiere_asistencia_ilimitada' => 'required|boolean',
-            //'usuario_id' => 'exists:usuarios,id', // primero lo hago nullable porque sacare el id de la sesion
+            'usuario_id' => 'exists:usuarios,id', 
             'nacionalidad_id' => 'required|',
             'destino_id' => 'required|'
         ];
@@ -55,8 +55,7 @@ class AsesoriaRequest extends FormRequest
             'quiere_asistencia_ilimitada.required' => 'Debe indicar si quiere asistencia ilimitada.',
             'quiere_asistencia_ilimitada.boolean' => 'El campo de asistencia ilimitada debe ser verdadero o falso.',
 
-            // 'usuario_id.required' => 'El usuario es obligatorio.',
-            // 'usuario_id.exists' => 'El usuario seleccionado no existe en la base de datos.',
+            'usuario_id.exists' => 'El usuario no existe en la base de datos.',
 
             'nacionalidad_id.required' => 'La nacionalidad es obligatoria.',
             'destino_id.required' => 'El destino es obligatorio.'

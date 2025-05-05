@@ -41,9 +41,13 @@
                 <a href="{{ route('experiencias.index') }}" class="btn btn-outline-secondary rounded-pill">
                     <i class="bi bi-arrow-left"></i> Volver
                 </a>
-                <a href="{{ route('experiencias.edit', $experiencia->id) }}" class="btn btn-outline-primary rounded-pill">
-                    <i class="bi bi-pencil-square"></i> Editar
-                </a>
+
+                @if (auth()->user()->rol === 'admin')
+                    <a href="{{ route('experiencias.edit', $experiencia->id) }}" class="btn btn-outline-primary rounded-pill">
+                        <i class="bi bi-pencil-square"></i> Editar
+                    </a>
+                @endif
+                
             </div>
         </div>
     </div>
