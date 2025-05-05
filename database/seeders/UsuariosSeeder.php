@@ -32,7 +32,7 @@ class UsuariosSeeder extends Seeder
                 'password' => bcrypt('user'),
                 'fecha_registro' => now(),
                 'fecha_nacimiento' => '1985-08-20',
-                'rol' => 'user',
+                'rol' => 'usuario',
                 'nacionalidad_id' => 2,
             ],
             [
@@ -42,7 +42,7 @@ class UsuariosSeeder extends Seeder
                 'password' => bcrypt('admin'),
                 'fecha_registro' => now(),
                 'fecha_nacimiento' => '1995-03-10',
-                'rol' => 'admin',
+                'rol' => 'usuario',
                 'nacionalidad_id' => 3,
             ],
             [
@@ -52,7 +52,7 @@ class UsuariosSeeder extends Seeder
                 'password' => bcrypt('user'),
                 'fecha_registro' => now(),
                 'fecha_nacimiento' => '2000-11-25',
-                'rol' => 'user',
+                'rol' => 'usuario',
                 'nacionalidad_id' => 4,
             ],
             [

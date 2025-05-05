@@ -24,7 +24,7 @@ class UsuarioFactory extends Factory
             'password' => bcrypt('admin'),
             'fecha_registro' => now(),
             'fecha_nacimiento' => fake()->dateTimeBetween('-60 years', '-18 years')->format('Y-m-d'),
-            'rol' => fake()->randomElement(['admin', 'user']),
+            'rol' => fake()->randomElement(['admin', 'usuario']),
             'nacionalidad_id' =>  1
         ];
     }
