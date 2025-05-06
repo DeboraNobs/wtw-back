@@ -18,24 +18,20 @@ class RolCheck
         $usuario = $request->user();
 
         if (!$usuario) {
-            return redirect()->route('login.form'); // Mejor redirigir que responder JSON
+            return redirect()->route('login.form');
         }
 
-        // Admin tiene acceso completo
-        if ($usuario->rol === 'admin') {
+        if ($usuario->rol === 'admin') { // admin tiene acceso completo
             return $next($request);
         }
 
-        // Verificar si el usuario tiene alguno de los roles permitidos
-        foreach ($roles as $rol) {
+        foreach ($roles as $rol) {  // ver si se tiene alguno de los roles permitidos
             if ($usuario->rol === $rol) {
                 return $next($request);
             }
         }
 
-        return redirect()->route('home')->with('error', 'No tienes permisos para acceder a esta sección');
-
-        // return response()->json(['error' => 'Acceso no autorizado'], 403);
+        return redirect()->route('home')->with('msg', 'No tienes permisos para acceder a esta sección');
     }
 }
 

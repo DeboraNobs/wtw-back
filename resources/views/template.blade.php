@@ -40,7 +40,7 @@
             <div class="row">
                 <div class="col-2 ms-2 border-end border-2" style="color:#278a81">
                     @include('partials.side-bar')
-                    <img src="{{ asset('images/map.png')}}" class="ms-4" alt="valija-side-bar" style="width: 60%; height: auto; object-fit: cover;">
+                    <img src="{{ asset('images/map.png')}}" class="ms-4 mt-4" alt="valija-side-bar" style="width: 60%; height: auto; object-fit: cover;">
                 </div>
                 <div class="col-9 ms-5">
                     @yield('contenido')
