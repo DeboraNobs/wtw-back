@@ -32,9 +32,4 @@
     </div>
 </div>
 
-<style>
-    .bg-gradient-primary {
-        background: linear-gradient(135deg, #6a11cb, #2365d7);
-    }
-</style>
 @endsection

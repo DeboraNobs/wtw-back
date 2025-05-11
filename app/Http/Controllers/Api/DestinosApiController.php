@@ -1,40 +1,26 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\DestinoRequest;
 use App\Models\Destino;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class DestinoController extends Controller
+class DestinosApiController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $destinos = Destino::all();
-        return view('destinos.index', compact('destinos'));
+        return response()->json($destinos);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        return view('destinos.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(DestinoRequest $request)
     {
-        if ($request->hasFile('imagen')) {
-            $imagenPath = $request->file('imagen')->store('destinos', 'public'); 
-        } else {
-            $imagenPath = null; // si no se sube una imagen ingresa null
-        }
+        $imagenPath = $request->hasFile('imagen')
+            ? $request->file('imagen')->store('destinos', 'public')
+            : null;
 
         $destino = new Destino();
         $destino->nombre = $request->nombre;
@@ -52,42 +38,26 @@ class DestinoController extends Controller
 
         $destino->save();
 
-        $msg = "Destino $request->nombre creado con éxito!";
-        return redirect()->route('destinos.index')->with('msg', $msg);
+        return response()->json(['message' => 'Destino creado con éxito', 'destino' => $destino], 201);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         $destino = Destino::findOrFail($id);
-        return view('destinos.show', compact('destino'));
+        return response()->json($destino);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        $destino = Destino::findOrFail($id);
-        return view('destinos.create', compact('destino'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(DestinoRequest $request, string $id)
     {
         $destino = Destino::findOrFail($id);
 
         if ($request->hasFile('imagen')) {
-            if ($destino->imagen && Storage::disk('public')->exists($destino->imagen)) { // elimina la imagen anterior si existe
+            if ($destino->imagen && Storage::disk('public')->exists($destino->imagen)) {
                 Storage::disk('public')->delete($destino->imagen);
             }
-            $imagenPath = $request->file('imagen')->store('destinos', 'public'); // guardar la nueva imagen
+            $imagenPath = $request->file('imagen')->store('destinos', 'public');
         } else {
-            $imagenPath = $destino->imagen; // mantiene la imagen existente
+            $imagenPath = $destino->imagen;
         }
 
         $destino->nombre = $request->nombre;
@@ -100,22 +70,24 @@ class DestinoController extends Controller
         $destino->requiere_estudios = $request->input('requiere_estudios', 0);
         $destino->requiere_idiomas = $request->input('requiere_idiomas', 0);
         $destino->esta_disponible = $request->input('esta_disponible', 0);
+
         $destino->imagen = $imagenPath;
+
         $destino->update();
 
-        $msg = "Destino $request->nombre editado con éxito!";
-        return redirect()->route('destinos.index')->with('msg', $msg);
+        return response()->json(['message' => 'Destino actualizado con éxito', 'destino' => $destino]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         $destino = Destino::findOrFail($id);
+
+        if ($destino->imagen && Storage::disk('public')->exists($destino->imagen)) {
+            Storage::disk('public')->delete($destino->imagen);
+        }
+
         $destino->delete();
-        $msg = "Destino con ID: $id, con nombre $destino->nombre eliminado con éxito!";
-        return redirect()->route('destinos.index')->with('msg', $msg);
+
+        return response()->json(['message' => "Destino '$destino->nombre' eliminado con éxito"]);
     }
 }
-

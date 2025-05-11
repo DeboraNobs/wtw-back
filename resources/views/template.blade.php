@@ -45,6 +45,7 @@
                 <div class="col-9 ms-5">
                     @yield('contenido')
                 </div>
+                @include('partials.footer')
             </div>
         </div>
 

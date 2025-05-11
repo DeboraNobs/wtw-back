@@ -22,16 +22,16 @@ class DestinoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nombre' => ['required', 'regex:/^[a-zA-Z\s]+$/'],
+            'nombre' => ['required', 'regex:/^[\pL\sñÑ]+$/u'],
             'moneda' => ['required', 'regex:/^[a-zA-Z\s]+$/'],
             'salario_minimo' => 'required|numeric',
             'salario_promedio' => 'required|numeric',
             'costo_vida_promedio' => 'required|numeric',
-            'aplica_exterior' => 'required|boolean',
-            'requiere_estudios' => 'required|boolean',
-            'requiere_idiomas' => 'required|boolean',
+            'aplica_exterior' => 'required',
+            'requiere_estudios' => 'required',
+            'requiere_idiomas' => 'required',
             'dificultad_visa' => 'required|numeric',
-            'esta_disponible' => 'required|boolean',
+            'esta_disponible' => 'required',
         ];
     }
 
@@ -54,19 +54,15 @@ class DestinoRequest extends FormRequest
             'costo_vida_promedio.numeric' => 'El costo de vida promedio debe ser un número.',
 
             'aplica_exterior.required' => 'Debe indicar si aplica para el exterior.',
-            'aplica_exterior.boolean' => 'El campo aplica exterior debe ser verdadero o falso.',
 
             'requiere_estudios.required' => 'Debe indicar si se requieren estudios.',
-            'requiere_estudios.boolean' => 'El campo requiere estudios debe ser verdadero o falso.',
 
             'dificultad_visa.required' => 'La dificultad de visa es obligatoria.',
             'dificultad_visa.numeric' => 'La dificultad de visa debe ser un número.',
 
             'requiere_idiomas.required' => 'Debe indicar si se requieren idiomas.',
-            'requiere_idiomas.boolean' => 'El campo requiere idiomas debe ser verdadero o falso.',
 
             'esta_disponible.required' => 'Debe indicar si el destino está disponible.',
-            'esta_disponible.boolean' => 'El campo disponibilidad debe ser verdadero o falso.',
         ];
     }
 

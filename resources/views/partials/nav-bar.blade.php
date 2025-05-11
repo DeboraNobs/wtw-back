@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg custom-navbar">
+<nav class="navbar navbar-expand-lg custom-navbar mb-4 shadow" style="background-color: #bbb2fe;">
     <div class="container-fluid">
 
         <a class="navbar-brand d-flex align-items-center me-lg-5" href="{{ route('home') }}">

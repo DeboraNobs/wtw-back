@@ -28,8 +28,8 @@ class DestinosSeeder extends Seeder
             'nueva_zelanda.webp',
             'polonia.jpg',
             'portugal.jpg',
-            'republica_checa.jpg',
-            'suecia.jpg',
+            'republica_checa.jpeg',
+            'suecia.jpeg',
         ];
 
         foreach ($imagenes as $imagen) {
@@ -265,7 +265,7 @@ class DestinosSeeder extends Seeder
         $destino16->requiere_estudios = false;
         $destino16->requiere_idiomas = true;
         $destino16->esta_disponible = true;
-        $destino16->imagen = 'destinos/republica_checa.jpg';
+        $destino16->imagen = 'destinos/republica_checa.jpeg';
         $destino16->save();
 
         $destino17 = new Destino();
@@ -279,7 +279,7 @@ class DestinosSeeder extends Seeder
         $destino17->requiere_estudios = false;
         $destino17->requiere_idiomas = true;
         $destino17->esta_disponible = true;
-        $destino17->imagen = 'destinos/suecia.jpg';
+        $destino17->imagen = 'destinos/suecia.jpeg';
         $destino17->save();
     }
 }
