@@ -28,7 +28,7 @@
     <div class="login">
         <img src="{{ asset('images/login.png') }}" alt="login_bg" class="login__bg" />
 
-        <form action="/login" method="POST" class="login__form" novalidate>
+        <form action="login" method="POST" class="login__form" novalidate>
             @csrf
             <h2 class="login__title">Iniciar Sesión</h2>
 
