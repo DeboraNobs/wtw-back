@@ -15,9 +15,8 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('login', [LoginController::class, 'verLoginForm'])->name('login.form');
-Route::post('login', [LoginController::class, 'login']);
+Route::post('login', [LoginController::class, 'login'])->name('loginBack');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
-
 
 Route::middleware('RolCheck:admin')->group(function () {
     Route::resource('nacionalidades', NacionalidadController::class);

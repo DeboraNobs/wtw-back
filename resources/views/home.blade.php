@@ -8,7 +8,7 @@
  <h4 class="text-center mt-4">Bienvenido {{Auth::user()->nombre ?? ''}}</h4>
 
  <div class="ms-2 mt-4 mb-4">
-    <img src="{{ asset('images/principal.png') }}" alt="principal-home" style="width: 100%; height: auto; object-fit: cover;">
+    <img src="{{ asset('images/principal.png') }}" class="rounded-5" alt="principal-home" style="width: 100%; height: auto; object-fit: cover;">
 </div>
 
 <div>
