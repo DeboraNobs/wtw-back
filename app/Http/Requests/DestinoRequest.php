@@ -23,7 +23,7 @@ class DestinoRequest extends FormRequest
     {
         return [
             'nombre' => ['required', 'regex:/^[\pL\sñÑ]+$/u'],
-            'moneda' => ['required', 'regex:/^[a-zA-Z\s]+$/'],
+            'moneda' => ['required', 'regex:/^[\p{L}\s]+$/u'],
             'salario_minimo' => 'required|numeric',
             'salario_promedio' => 'required|numeric',
             'costo_vida_promedio' => 'required|numeric',

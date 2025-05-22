@@ -85,9 +85,19 @@ class DestinosApiController extends Controller
         if ($destino->imagen && Storage::disk('public')->exists($destino->imagen)) {
             Storage::disk('public')->delete($destino->imagen);
         }
-
         $destino->delete();
-
         return response()->json(['message' => "Destino '$destino->nombre' eliminado con éxito"]);
+    }
+
+    public function getDestinosPorNacionalidad($nacionalidadId)
+    {
+        $destinos = Destino::whereHas('nacionalidades', function ($query) use ($nacionalidadId) {
+            $query->where('nacionalidad_id', $nacionalidadId);
+        })->with(['nacionalidades' => function ($query) use ($nacionalidadId) {
+            $query->where('nacionalidad_id', $nacionalidadId)
+                ->select('num_cupos', 'destino_id', 'nacionalidad_id');
+        }])->get();
+
+        return response()->json($destinos);
     }
 }

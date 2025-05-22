@@ -66,7 +66,7 @@ class DestinosSeeder extends Seeder
         $destino2->costo_vida_promedio = 1400;
         $destino2->dificultad_visa = 3;
         $destino2->aplica_exterior = false;
-        $destino2->requiere_estudios = false;
+        $destino2->requiere_estudios = true;
         $destino2->requiere_idiomas = false;
         $destino2->esta_disponible = true;
         $destino2->imagen = 'destinos/andorra.jpg';
@@ -79,7 +79,7 @@ class DestinosSeeder extends Seeder
         $destino3->salario_promedio = 5200;
         $destino3->costo_vida_promedio = 2800;
         $destino3->dificultad_visa = 4;
-        $destino3->aplica_exterior = true;
+        $destino3->aplica_exterior = false;
         $destino3->requiere_estudios = false;
         $destino3->requiere_idiomas = true;
         $destino3->esta_disponible = true;
@@ -94,8 +94,8 @@ class DestinosSeeder extends Seeder
         $destino4->costo_vida_promedio = 1700;
         $destino4->dificultad_visa = 3;
         $destino4->aplica_exterior = true;
-        $destino4->requiere_estudios = false;
-        $destino4->requiere_idiomas = true;
+        $destino4->requiere_estudios = true;
+        $destino4->requiere_idiomas = false;
         $destino4->esta_disponible = true;
         $destino4->imagen = 'destinos/austria.jpg';
         $destino4->save();
@@ -107,7 +107,7 @@ class DestinosSeeder extends Seeder
         $destino5->salario_promedio = 4500;
         $destino5->costo_vida_promedio = 2200;
         $destino5->dificultad_visa = 4;
-        $destino5->aplica_exterior = true;
+        $destino5->aplica_exterior = false;
         $destino5->requiere_estudios = false;
         $destino5->requiere_idiomas = true;
         $destino5->esta_disponible = true;
@@ -122,7 +122,7 @@ class DestinosSeeder extends Seeder
         $destino6->costo_vida_promedio = 1200;
         $destino6->dificultad_visa = 2;
         $destino6->aplica_exterior = true;
-        $destino6->requiere_estudios = false;
+        $destino6->requiere_estudios = true;
         $destino6->requiere_idiomas = false;
         $destino6->esta_disponible = true;
         $destino6->imagen = 'destinos/espana.webp';
@@ -135,7 +135,7 @@ class DestinosSeeder extends Seeder
         $destino7->salario_promedio = 3400;
         $destino7->costo_vida_promedio = 1500;
         $destino7->dificultad_visa = 3;
-        $destino7->aplica_exterior = true;
+        $destino7->aplica_exterior = false;
         $destino7->requiere_estudios = false;
         $destino7->requiere_idiomas = true;
         $destino7->esta_disponible = true;
@@ -144,14 +144,14 @@ class DestinosSeeder extends Seeder
 
         $destino8 = new Destino();
         $destino8->nombre = 'Japón';
-        $destino8->moneda = 'Yen japonés';
+        $destino8->moneda = 'Yen japones';
         $destino8->salario_minimo = 1200 * 160;
         $destino8->salario_promedio = 3500;
         $destino8->costo_vida_promedio = 1700;
         $destino8->dificultad_visa = 4;
         $destino8->aplica_exterior = true;
-        $destino8->requiere_estudios = false;
-        $destino8->requiere_idiomas = true;
+        $destino8->requiere_estudios = true;
+        $destino8->requiere_idiomas = false;
         $destino8->esta_disponible = true;
         $destino8->imagen = 'destinos/japon.webp';
         $destino8->save();
@@ -163,7 +163,7 @@ class DestinosSeeder extends Seeder
         $destino9->salario_promedio = 3500;
         $destino9->costo_vida_promedio = 2000;
         $destino9->dificultad_visa = 3;
-        $destino9->aplica_exterior = true;
+        $destino9->aplica_exterior = false;
         $destino9->requiere_estudios = false;
         $destino9->requiere_idiomas = true;
         $destino9->esta_disponible = true;
@@ -178,8 +178,8 @@ class DestinosSeeder extends Seeder
         $destino10->costo_vida_promedio = 2200;
         $destino10->dificultad_visa = 3;
         $destino10->aplica_exterior = true;
-        $destino10->requiere_estudios = false;
-        $destino10->requiere_idiomas = true;
+        $destino10->requiere_estudios = true;
+        $destino10->requiere_idiomas = false;
         $destino10->esta_disponible = true;
         $destino10->imagen = 'destinos/islandia.webp';
         $destino10->save();
@@ -191,7 +191,7 @@ class DestinosSeeder extends Seeder
         $destino11->salario_promedio = 980;
         $destino11->costo_vida_promedio = 600;
         $destino11->dificultad_visa = 3;
-        $destino11->aplica_exterior = true;
+        $destino11->aplica_exterior = false;
         $destino11->requiere_estudios = false;
         $destino11->requiere_idiomas = true;
         $destino11->esta_disponible = true;
@@ -206,8 +206,8 @@ class DestinosSeeder extends Seeder
         $destino12->costo_vida_promedio = 2500;
         $destino12->dificultad_visa = 3;
         $destino12->aplica_exterior = true;
-        $destino12->requiere_estudios = false;
-        $destino12->requiere_idiomas = true;
+        $destino12->requiere_estudios = true;
+        $destino12->requiere_idiomas = false;
         $destino12->esta_disponible = true;
         $destino12->imagen = 'destinos/luxemburgo.jpg';
         $destino12->save();
@@ -219,7 +219,7 @@ class DestinosSeeder extends Seeder
         $destino13->salario_promedio = 5200;
         $destino13->costo_vida_promedio = 2800;
         $destino13->dificultad_visa = 4;
-        $destino13->aplica_exterior = true;
+        $destino13->aplica_exterior = false;
         $destino13->requiere_estudios = false;
         $destino13->requiere_idiomas = true;
         $destino13->esta_disponible = true;
@@ -234,8 +234,8 @@ class DestinosSeeder extends Seeder
         $destino14->costo_vida_promedio = 800;
         $destino14->dificultad_visa = 3;
         $destino14->aplica_exterior = true;
-        $destino14->requiere_estudios = false;
-        $destino14->requiere_idiomas = true;
+        $destino14->requiere_estudios = true;
+        $destino14->requiere_idiomas = false;
         $destino14->esta_disponible = true;
         $destino14->imagen = 'destinos/polonia.jpg';
         $destino14->save();
@@ -247,9 +247,9 @@ class DestinosSeeder extends Seeder
         $destino15->salario_promedio = 1300;
         $destino15->costo_vida_promedio = 1000;
         $destino15->dificultad_visa = 2;
-        $destino15->aplica_exterior = true;
+        $destino15->aplica_exterior = false;
         $destino15->requiere_estudios = false;
-        $destino15->requiere_idiomas = false;
+        $destino15->requiere_idiomas = true;
         $destino15->esta_disponible = true;
         $destino15->imagen = 'destinos/portugal.jpg';
         $destino15->save();
@@ -262,8 +262,8 @@ class DestinosSeeder extends Seeder
         $destino16->costo_vida_promedio = 900;
         $destino16->dificultad_visa = 3;
         $destino16->aplica_exterior = true;
-        $destino16->requiere_estudios = false;
-        $destino16->requiere_idiomas = true;
+        $destino16->requiere_estudios = true;
+        $destino16->requiere_idiomas = false;
         $destino16->esta_disponible = true;
         $destino16->imagen = 'destinos/republica_checa.jpeg';
         $destino16->save();
@@ -275,7 +275,7 @@ class DestinosSeeder extends Seeder
         $destino17->salario_promedio = 2900;
         $destino17->costo_vida_promedio = 1500;
         $destino17->dificultad_visa = 3;
-        $destino17->aplica_exterior = true;
+        $destino17->aplica_exterior = false;
         $destino17->requiere_estudios = false;
         $destino17->requiere_idiomas = true;
         $destino17->esta_disponible = true;

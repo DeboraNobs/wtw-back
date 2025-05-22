@@ -8,6 +8,7 @@ use App\Http\Controllers\ExperienciaController;
 use App\Http\Controllers\RequisitoController;
 use App\Http\Controllers\SucursalController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegistroController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,6 +18,8 @@ Route::get('/', function () {
 Route::get('login', [LoginController::class, 'verLoginForm'])->name('login.form');
 Route::post('login', [LoginController::class, 'login'])->name('loginBack');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('registro', [RegistroController::class, 'create'])->name('registro');
+Route::post('registrarse', [RegistroController::class, 'store'])->name('registrarse');
 
 Route::middleware('RolCheck:admin')->group(function () {
     Route::resource('nacionalidades', NacionalidadController::class);

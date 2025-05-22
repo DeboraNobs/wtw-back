@@ -7,6 +7,7 @@ body,
 .bg-gradient-primary {
     background-color: rgba(143, 0, 255, 1);
 }
+
 /* ----  TABLAS  ---- */
 
 .table tbody tr:hover {
@@ -14,13 +15,14 @@ body,
 }
 
 table .backcolor {
-    background-color:#a780d1;
-    color:#40176b;
+    background-color: #a780d1;
+    color: #40176b;
 }
 
 table .backcolor-td {
     background-color: whitesmoke;
 }
+
 /* ----  TITULOS  ---- */
 
 h3 {
@@ -30,12 +32,15 @@ h3 {
 /* ----  BOTONES  ---- */
 
 /* botón ver y botón volver */
-.btn-outline-info, .btn-outline-secondary {
+.btn-outline-info,
+.btn-outline-secondary {
     background-color: #a780d1;
     color: #40176b;
     border: #780dea;
 }
-.btn-outline-info:hover, .btn-outline-secondary:hover {
+
+.btn-outline-info:hover,
+.btn-outline-secondary:hover {
     background-color: #974fe4;
     color: white;
     border: #780dea;
@@ -46,6 +51,7 @@ h3 {
     background-image: linear-gradient(to right, #974fe4, #00FFA3);
     color: #780dea;
 }
+
 .btn-outline-primary:hover {
     background-image: #00FFA3;
     color: white;
@@ -57,6 +63,7 @@ h3 {
     color: #6816c1;
     border: none;
 }
+
 .btn-primary:hover {
     background-color: rgb(46, 119, 150);
     color: white;
@@ -69,6 +76,7 @@ h3 {
     color: #780dea;
     border: #00FFA3;
 }
+
 .btn-outline-danger:hover {
     background-color: #4ad6a3;
     color: white;
@@ -98,7 +106,7 @@ h3 {
 }
 
 .custom-navbar .nav-link:hover {
-    color:#780dea;
+    color: #780dea;
 }
 
 /* Subrayado animado del navbar */
@@ -112,6 +120,7 @@ h3 {
     background-image: linear-gradient(to right, #974fe4, #00FFA3);
     transition: width 0.3s ease-in-out;
 }
+
 .custom-navbar .nav-link:hover::after {
     width: 100%;
 }
@@ -137,7 +146,7 @@ a {
 
 /* Home blade */
 .fecha {
-    font-size:larger;
+    font-size: larger;
     color: #40176b;
 }
 
@@ -176,9 +185,9 @@ a {
     align-items: center;
     /* background-color: var(--black-color);
     color: var(--black-color); */
-  }
+}
 
-  .login__bg {
+.login__bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -186,9 +195,9 @@ a {
     height: 100%;
     object-fit: cover;
     opacity: 0.9;
-  }
+}
 
-  .login__form {
+.login__form {
     position: relative;
     z-index: 1;
     background-color: rgb(245, 245, 234, 0.9);
@@ -197,61 +206,155 @@ a {
     width: 100%;
     max-width: 400px;
     text-align: center;
-  }
+}
 
-  .login__title {
+.login__title {
     margin-bottom: 20px;
-  }
+}
 
-  .login__inputs {
+.login__inputs {
     margin-bottom: 20px;
-  }
+}
 
-  .login__box {
+.login__box {
     position: relative;
     margin-bottom: 15px;
-  }
+}
 
-  .login__input {
+.login__input {
     width: 100%;
     padding: 12px;
     padding-left: 40px;
     border: none;
     border-radius: 5px;
-    background-color:#d7bedf;
+    background-color: #d7bedf;
     color: black;
-  }
+}
 
-  .login__box i {
+.login__box i {
     position: absolute;
     top: 50%;
     left: 10px;
     transform: translateY(-50%);
-  }
+}
 
-  .login__button {
+.login__button {
     width: 100%;
     padding: 12px;
-    background-color:#a780d1;
+    background-color: #a780d1;
     color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
+}
 
-  .login__button:hover {
-    background-color:#40176b;
+.login__button:hover {
+    background-color: #40176b;
     color: antiquewhite;
-  }
+}
 
-  .login__register {
+.login__register {
     margin-top: 20px;
-  }
+}
 
-  .login__register a {
-    color:#40176b;
-  }
+.login__register a {
+    color: #40176b;
+}
 
-  .login__register a:hover {
-    color:#a780d1;
-  }
+.login__register a:hover {
+    color: #a780d1;
+}
+
+
+/* Formulario de registro de usuario */
+
+/* Formulario de registro de usuario (igual que login) */
+.register {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+    z-index: -1;
+}
+
+.register__form {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(245, 245, 234, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.register__title {
+    margin-bottom: 20px;
+    color: black;
+}
+
+.register__inputs {
+    margin-bottom: 20px;
+}
+
+.register__box {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.register__input {
+    width: 100%;
+    padding: 12px;
+    padding-left: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d7bedf;
+    color: black;
+}
+
+.register__box i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: black;
+}
+
+.register__button {
+    width: 100%;
+    padding: 12px;
+    background-color: #a780d1;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register__button:hover {
+    background-color: #40176b;
+    color: antiquewhite;
+}
+
+.register__login {
+    margin-top: 20px;
+    color: black;
+}
+
+.register__login a {
+    color: #40176b;
+}
+
+.register__login a:hover {
+    color: #a780d1;
+}

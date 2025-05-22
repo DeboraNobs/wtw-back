@@ -26,6 +26,17 @@
 
 <body>
     <div class="login">
+        @if (session('success'))
+            <script>
+                Swal.fire({
+                    title: '¡Registro exitoso!',
+                    text: 'Usuario {{ session('success') }} creado con éxito.',
+                    icon: 'success',
+                });
+            </script>
+        @endif
+
+
         <img src="{{ asset('images/login.png') }}" alt="login_bg" class="login__bg" />
 
         <form action="{{ route('loginBack') }}" method="POST" class="login__form" novalidate>
@@ -51,12 +62,13 @@
                     {{ $msg }}
                 </div>
             @endif
+            
             @if (session('msg'))
                 <div class="alert alert-danger mt-3">{{ session('msg') }}</div>
             @endif
 
             <div class="login__register">
-                No tienes cuenta? <a href="">Registrate</a>
+                No tienes cuenta? <a href="{{ route('registro') }}">Registrate</a>
             </div>
 
         </form>
