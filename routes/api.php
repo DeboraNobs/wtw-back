@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\NacionalidadesApiController;
 use App\Http\Controllers\Api\SucursalesApiController;
 use App\Http\Controllers\Api\UsuarioApiController;
 use App\Http\Controllers\Api\DestinoNacionalidadRequisitoApiController;
+use App\Http\Controllers\Api\RegistroApiController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -36,3 +37,4 @@ Route::get(
 
 
 Route::get('/destinos/{destinoId}/nacionalidades/{nacionalidadId}/requisitos', [DestinoNacionalidadRequisitoApiController::class, 'requisitosPorDestinoYNacionalidad']);
+Route::post('/registro', [RegistroApiController::class, 'store']);
