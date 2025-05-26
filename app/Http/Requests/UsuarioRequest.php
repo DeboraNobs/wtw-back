@@ -24,9 +24,9 @@ class UsuarioRequest extends FormRequest
         return [
             'nombre' => ['required'],
             'apellidos' => ['required'],
-            'email' => 'required|email|unique:usuarios,email',
+            'email' => 'required|email', // |unique:usuarios,email
             // 'rol' => 'required',
-            'password' => 'required|regex:/^(?=.*[A-Z])(?=.*\d).{9,}$/',
+            // 'password' => 'required|regex:/^(?=.*[A-Z])(?=.*\d).{9,}$/',
             'fecha_nacimiento' => 'required',
             'nacionalidad_id' => 'required|numeric',
         ];
@@ -34,16 +34,13 @@ class UsuarioRequest extends FormRequest
 
     public function messages()
     {
-        return [
+        $rules = [
             'nombre.required' => 'El nombre es obligatorio.',
 
             'apellidos.required' => 'El apellido es obligatorio.',
 
             'email.required' => 'El correo electrónico es obligatorio.',
             'email.email' => 'Este correo electrónico no tiene formato válido.',
-            'email.unique' => 'El correo electrónico ya está registrado. Ingrese uno nuevo',
-
-            // 'rol.required' => 'El rol es obligatorio.',
 
             'password.required' => 'La contraseña es obligatoria.',
             'password.regex' => 'La contraseña debe contener al menos una letra mayúscula, un número y debe tener al menos 9 caracteres.',
@@ -53,6 +50,13 @@ class UsuarioRequest extends FormRequest
             'nacionalidad_id.required' => 'La nacionalidad es obligatoria.',
             'nacionalidad_id.numeric' => 'La nacionalidad debe ser un número válido.',
         ];
+
+        if ($this->has('password')) {
+            $rules['password'] = 'required|regex:/^(?=.*[A-Z])(?=.*\d).{9,}$/';
+        }
+
+        return $rules;
+
     }
 
 

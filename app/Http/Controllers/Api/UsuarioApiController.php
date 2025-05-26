@@ -46,7 +46,11 @@ class UsuarioApiController extends Controller
         $usuario->apellidos = $request->apellidos;
         $usuario->email = $request->email;
         $usuario->rol = $request->rol;
-        $usuario->password = bcrypt($request->password);
+        // $usuario->password = bcrypt($request->password);
+        if ($request->has('password') && !empty($request->password)) {
+            $usuario->password = bcrypt($request->password);
+        }
+
         $usuario->fecha_registro = $request->fecha_registro;
         $usuario->fecha_nacimiento = $request->fecha_nacimiento;
         $usuario->nacionalidad_id = $request->nacionalidad_id;
