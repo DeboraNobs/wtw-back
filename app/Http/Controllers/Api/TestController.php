@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Api;
+
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
@@ -34,9 +35,15 @@ class TestController extends Controller
         return response()->json(['success' => true]);
     }
 
+    // private function generarHtmlParaPdf(array $resultados): string
+    // {
+    //     Log::info('Datos pasados a la vista PDF:', $resultados); // <-- Añade esta línea
+    //     return view('pdf.resultados', ['resultados' => $resultados])->render();
+    // }
+
     private function generarHtmlParaPdf(array $resultados): string
     {
-        Log::info('Datos pasados a la vista PDF:', $resultados); // <-- Añade esta línea
-        return view('pdf.resultados', ['resultados' => $resultados])->render();
+        $html = view('pdf.resultados', ['resultados' => $resultados])->render();
+        return $html;
     }
 }
