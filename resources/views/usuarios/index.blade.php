@@ -35,7 +35,7 @@
                                 <th class="text-start ps-4">ID</th>
                                 <th class="text-start">Nombre</th>
                                 <th class="text-start">Apellidos</th>
-                                <th class="text-start">Email</th>
+                                {{-- <th class="text-start">Email</th> --}}
                                 <th class="text-start">Rol</th>
                                 <th>Acciones</th>
                             </tr>
@@ -46,7 +46,7 @@
                                     <td class="text-start ps-4">{{ $usuario->id }}</td>
                                     <td class="text-start">{{ $usuario->nombre }}</td>
                                     <td class="text-start">{{ $usuario->apellidos }}</td>
-                                    <td class="text-start">{{ $usuario->email }}</td>
+                                    {{-- <td class="text-start">{{ $usuario->email }}</td> --}}
                                     <td class="text-start">{{ $usuario->rol }}</td>
 
                                     <td>

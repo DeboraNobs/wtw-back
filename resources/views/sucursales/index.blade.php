@@ -68,7 +68,7 @@
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="button"
-                                                        class="btn btn-sm btn-outline-danger rounded-pill">
+                                                        class="btn btn-sm btn-outline-danger rounded-pill delete-btn">
                                                         <i class="bi bi-trash"></i> Eliminar
                                                     </button>
                                                 </form>
