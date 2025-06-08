@@ -20,6 +20,14 @@ class RegistroController extends Controller
 
     public function store(UsuarioRequest $request)
     {
+        $existeUsuario = Usuario::where('email', $request->email)->first();
+
+        if ($existeUsuario) {
+            return redirect()->back()
+                ->withInput()
+                ->with('error', 'El email ya está registrado');
+        }
+
         $usuario = new Usuario();
         $usuario->nombre = $request->nombre;
         $usuario->apellidos = $request->apellidos;

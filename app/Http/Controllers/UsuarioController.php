@@ -30,6 +30,14 @@ class UsuarioController extends Controller
      */
     public function store(UsuarioRequest $request)
     {
+        $existeUsuario = Usuario::where('email', $request->email)->first();
+
+        if ($existeUsuario) {
+            return redirect()->back()
+                ->withInput()
+                ->with('error', 'El email ya está registrado');
+        }
+
         $usuario = new Usuario();
         $usuario->nombre = $request->nombre;
         $usuario->apellidos = $request->apellidos;
@@ -69,11 +77,25 @@ class UsuarioController extends Controller
     public function update(UsuarioRequest $request, string $id)
     {
         $usuario = Usuario::findOrFail($id);
+
+         // Verificar si el email ya existe en otro usuario
+        $existeUsuario = Usuario::where('email', $request->email)
+                               ->where('id', '!=', $id)
+                               ->first();
+
+        if ($existeUsuario) {
+            return redirect()->back()
+                ->withInput()
+                ->with('error', 'El email ya está registrado en otro usuario');
+        }
+
         $usuario->nombre = $request->nombre;
         $usuario->apellidos = $request->apellidos;
         $usuario->email = $request->email;
         $usuario->rol = $request->rol;
-        $usuario->password = bcrypt($request->password);
+        if ($request->password) {
+            $usuario->password = bcrypt($request->password);
+        }
         $usuario->fecha_registro = $request->fecha_registro;
         $usuario->fecha_nacimiento = $request->fecha_nacimiento;
         $usuario->nacionalidad_id = $request->nacionalidad_id;
